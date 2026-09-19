@@ -7,14 +7,26 @@ const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
 const state = {
   enabled: loadEnabled(RECIPES),
-  filter: ""
+  filter: "",
+  facility: ""
 };
 
 const els = {
   search: document.getElementById("search"),
+  facility: document.getElementById("facility"),
   count: document.getElementById("enabled-count"),
   list: document.getElementById("recipe-list")
 };
+
+const EXTERNAL_VALUE = "__source__";
+
+function initFacilityOptions() {
+  const facilities = [...new Set(RECIPES.map((r) => r.facility).filter(Boolean))].sort();
+  let html = '<option value="">All facilities</option>';
+  html += '<option value="' + EXTERNAL_VALUE + '">External (sources)</option>';
+  for (const f of facilities) html += '<option value="' + f + '">' + f + "</option>";
+  els.facility.innerHTML = html;
+}
 
 function fmt(n) {
   return String(Math.round(n * 1000) / 1000);
@@ -43,6 +55,13 @@ function countsText(counts, r) {
 }
 
 function matchesFilter(r) {
+  if (state.facility) {
+    if (state.facility === EXTERNAL_VALUE) {
+      if (!r.source) return false;
+    } else if (r.facility !== state.facility) {
+      return false;
+    }
+  }
   if (!state.filter) return true;
   return r.name.toLowerCase().includes(state.filter);
 }
@@ -125,4 +144,10 @@ els.search.addEventListener("input", () => {
   render();
 });
 
+els.facility.addEventListener("change", () => {
+  state.facility = els.facility.value;
+  render();
+});
+
+initFacilityOptions();
 render();

@@ -149,8 +149,21 @@ input[type="search"] {
   width: 100%;
 }
 
-input[type="search"] {
+.filters {
+  display: flex;
+  gap: 8px;
   margin-bottom: 10px;
+}
+
+.filters input[type="search"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.filters select {
+  flex: none;
+  width: auto;
+  min-width: 200px;
 }
 
 .avail-row {
