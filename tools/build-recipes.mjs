@@ -232,6 +232,10 @@ function recipeFallbackName(id, inputs, outputs, facilityName) {
   return id;
 }
 
+function displayedName(name) {
+  return name.replace(/\s+Production(?=\s*\(|$)/i, "");
+}
+
 const recipes = [];
 const namesToIds = new Map();
 let skipped = 0;
@@ -281,7 +285,7 @@ for (const entry of parseRecipeEntries(readRel("src/data/recipes.ts"))) {
 
   recipes.push({
     id: recipeId,
-    name: localeRecipe[recipeId] || recipeFallbackName(recipeId, inputsArray, outputsArray, facilityName),
+    name: displayedName(localeRecipe[recipeId] || recipeFallbackName(recipeId, inputsArray, outputsArray, facilityName)),
     facility: facilityName,
     craftingTime,
     inputs,

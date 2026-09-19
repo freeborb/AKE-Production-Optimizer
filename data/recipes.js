@@ -1,7 +1,7 @@
 export const RECIPES = [
   {
     "id": "component_activity_copper_poly_cmpt",
-    "name": "Proto Xiran-Cuprium Part Production",
+    "name": "Proto Xiran-Cuprium Part",
     "facility": "Fitting Unit",
     "craftingTime": 10,
     "inputs": {
@@ -14,7 +14,7 @@ export const RECIPES = [
   },
   {
     "id": "component_activity_xiranite_cmpt_1",
-    "name": "Experimental Xiranite Part Production",
+    "name": "Experimental Xiranite Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -27,7 +27,7 @@ export const RECIPES = [
   },
   {
     "id": "component_activity_xiranite_enr_cmpt_1",
-    "name": "Experimental Heavy Xiranite Part Production",
+    "name": "Experimental Heavy Xiranite Part",
     "facility": "Fitting Unit",
     "craftingTime": 20,
     "inputs": {
@@ -40,7 +40,7 @@ export const RECIPES = [
   },
   {
     "id": "component_copper_cmpt_1",
-    "name": "Cuprium Part Production",
+    "name": "Cuprium Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -53,7 +53,7 @@ export const RECIPES = [
   },
   {
     "id": "component_copper_enr_cmpt_1",
-    "name": "Hetonite Part Production",
+    "name": "Hetonite Part",
     "facility": "Fitting Unit",
     "craftingTime": 10,
     "inputs": {
@@ -66,7 +66,7 @@ export const RECIPES = [
   },
   {
     "id": "component_copper_enr2_cmpt_1",
-    "name": "Pyrrolite Part Production",
+    "name": "Pyrrolite Part",
     "facility": "Fitting Unit",
     "craftingTime": 10,
     "inputs": {
@@ -79,7 +79,7 @@ export const RECIPES = [
   },
   {
     "id": "component_glass_cmpt_1",
-    "name": "Amethyst Part Production",
+    "name": "Amethyst Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -92,7 +92,7 @@ export const RECIPES = [
   },
   {
     "id": "component_glass_enr_cmpt_1",
-    "name": "Cryston Part Production",
+    "name": "Cryston Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -105,7 +105,7 @@ export const RECIPES = [
   },
   {
     "id": "component_iron_cmpt_1",
-    "name": "Ferrium Part Production",
+    "name": "Ferrium Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -118,7 +118,7 @@ export const RECIPES = [
   },
   {
     "id": "component_iron_enr_cmpt_1",
-    "name": "Steel Part Production",
+    "name": "Steel Part",
     "facility": "Fitting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -131,7 +131,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_acid_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -145,7 +145,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_copper_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -159,7 +159,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_copper_enr_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -173,7 +173,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_grass_1_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -187,7 +187,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_grass_2_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -201,7 +201,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_sewage_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -215,7 +215,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_water_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -229,7 +229,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_xiranite_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -243,7 +243,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_xiranite_enr_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -257,7 +257,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_xiranite_lowpoly_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -271,7 +271,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copper_xiranite_poly_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -285,7 +285,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_acid_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -299,7 +299,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_copper_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -313,7 +313,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_copper_enr_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -327,7 +327,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_grass_1_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -341,7 +341,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_grass_2_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -355,7 +355,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_sewage_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -369,7 +369,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_water_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -383,7 +383,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_xiranite_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -397,7 +397,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_xiranite_enr_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -411,7 +411,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_xiranite_lowpoly_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -425,7 +425,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperenr_xiranite_poly_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -439,7 +439,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_acid_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -453,7 +453,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_copper_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -467,7 +467,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_copper_enr_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -481,7 +481,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_copper_enr2_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -495,7 +495,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_inert_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -509,7 +509,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_water_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -523,7 +523,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_xiranite_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -537,7 +537,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_copperjar_gas_xiranite_enr_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -551,7 +551,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_acid_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -565,7 +565,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_copper_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -579,7 +579,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_copper_enr_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -593,7 +593,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_grass_1_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -607,7 +607,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_grass_2_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -621,7 +621,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_sewage_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -635,7 +635,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_water_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -649,7 +649,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_xiranite_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -663,7 +663,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_xiranite_enr_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -677,7 +677,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_xiranite_lowpoly_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -691,7 +691,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glass_xiranite_poly_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -705,7 +705,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_acid_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -719,7 +719,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_copper_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -733,7 +733,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_copper_enr_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -747,7 +747,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_grass_1_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -761,7 +761,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_grass_2_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -775,7 +775,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_sewage_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -789,7 +789,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_water_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -803,7 +803,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_xiranite_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -817,7 +817,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_xiranite_enr_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -831,7 +831,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_xiranite_lowpoly_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -845,7 +845,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_glassenr_xiranite_poly_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -859,7 +859,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_acid_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -873,7 +873,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_copper_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -887,7 +887,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_copper_enr_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -901,7 +901,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_grass_1_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -915,7 +915,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_grass_2_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -929,7 +929,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_sewage_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -943,7 +943,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_water_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -957,7 +957,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_xiranite_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -971,7 +971,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_xiranite_enr_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -985,7 +985,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_xiranite_lowpoly_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -999,7 +999,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_iron_xiranite_poly_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1013,7 +1013,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_acid_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1027,7 +1027,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_copper_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1041,7 +1041,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_copper_enr_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1055,7 +1055,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_grass_1_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1069,7 +1069,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_grass_2_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1083,7 +1083,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_sewage_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1097,7 +1097,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_water_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1111,7 +1111,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_xiranite_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1125,7 +1125,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_xiranite_enr_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1139,7 +1139,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_xiranite_lowpoly_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1153,7 +1153,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_ironenr_xiranite_poly_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Separating Unit",
     "craftingTime": 2,
     "inputs": {
@@ -1167,7 +1167,7 @@ export const RECIPES = [
   },
   {
     "id": "dismantler_xiranenr_grass_2_1",
-    "name": "Experimental Heavy Xiranite Bottle Production",
+    "name": "Experimental Heavy Xiranite Bottle",
     "facility": "Separating Unit",
     "craftingTime": 10,
     "inputs": {
@@ -1489,7 +1489,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_food_1_1",
-    "name": "Canned Citrome [C] Production",
+    "name": "Canned Citrome [C]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -1503,7 +1503,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_food_2_1",
-    "name": "Canned Citrome [B] Production",
+    "name": "Canned Citrome [B]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -1517,7 +1517,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_food_3_1",
-    "name": "Canned Citrome [A] Production",
+    "name": "Canned Citrome [A]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -2147,7 +2147,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_rec_hp_1_1",
-    "name": "Buck Capsule [C] Production",
+    "name": "Buck Capsule [C]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -2161,7 +2161,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_rec_hp_2_1",
-    "name": "Buck Capsule [B] Production",
+    "name": "Buck Capsule [B]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -2175,7 +2175,7 @@ export const RECIPES = [
   },
   {
     "id": "filling_bottled_rec_hp_3_1",
-    "name": "Buck Capsule [A] Production",
+    "name": "Buck Capsule [A]",
     "facility": "Filling Unit",
     "craftingTime": 10,
     "inputs": {
@@ -2348,7 +2348,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_activity_xiranite_enr_nugget_1",
-    "name": "Proto Heavy Xiranite Production",
+    "name": "Proto Heavy Xiranite",
     "facility": "Refining Unit",
     "craftingTime": 10,
     "inputs": {
@@ -2361,7 +2361,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_activity_xiranite_nugget_1",
-    "name": "Proto Xiranite Production",
+    "name": "Proto Xiranite",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2374,7 +2374,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_enr_1",
-    "name": "Stabilized Carbon Production",
+    "name": "Stabilized Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2387,7 +2387,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_enr_powder_1",
-    "name": "Dense Carbon Powder Production",
+    "name": "Dense Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2400,7 +2400,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_enr_powder_2",
-    "name": "Dense Carbon Powder Production",
+    "name": "Dense Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2413,7 +2413,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_1",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2426,7 +2426,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_2",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2439,7 +2439,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_3",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2452,7 +2452,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_4",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2465,7 +2465,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_5",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2478,7 +2478,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_material_6",
-    "name": "Carbon Production",
+    "name": "Carbon",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2491,7 +2491,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_powder_1",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2504,7 +2504,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_powder_2",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2517,7 +2517,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_powder_3",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2530,7 +2530,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_powder_4",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2543,7 +2543,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_carbon_powder_5",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2556,7 +2556,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_copper_nugget_1",
-    "name": "Cuprium Production (Fluid)",
+    "name": "Cuprium (Fluid)",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2571,7 +2571,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_crystal_enr_1",
-    "name": "Packed Origocrust Production",
+    "name": "Packed Origocrust",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2584,7 +2584,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_crystal_enr_powder_1",
-    "name": "Dense Origocrust Powder Production",
+    "name": "Dense Origocrust Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2597,7 +2597,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_crystal_powder_1",
-    "name": "Origocrust Powder Production",
+    "name": "Origocrust Powder",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2610,7 +2610,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_crystal_shell_1",
-    "name": "Origocrust Production",
+    "name": "Origocrust",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2623,7 +2623,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_crystal_shell_2",
-    "name": "Origocrust Production",
+    "name": "Origocrust",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2636,7 +2636,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_iron_enr_1",
-    "name": "Steel Production",
+    "name": "Steel",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2649,7 +2649,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_iron_nugget_1",
-    "name": "Ferrium Production",
+    "name": "Ferrium",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2662,7 +2662,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_iron_nugget_2",
-    "name": "Ferrium Production",
+    "name": "Ferrium",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2675,7 +2675,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_quartz_enr_1",
-    "name": "Cryston Fiber Production",
+    "name": "Cryston Fiber",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2688,7 +2688,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_quartz_glass_1",
-    "name": "Amethyst Fiber Production",
+    "name": "Amethyst Fiber",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2701,7 +2701,7 @@ export const RECIPES = [
   },
   {
     "id": "furnance_quartz_glass_2",
-    "name": "Amethyst Fiber Production",
+    "name": "Amethyst Fiber",
     "facility": "Refining Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2714,7 +2714,7 @@ export const RECIPES = [
   },
   {
     "id": "gas_reactor_activity_copper_poly_gas_1",
-    "name": "Proto Xiran-Cuprium Gas Production",
+    "name": "Proto Xiran-Cuprium Gas",
     "facility": "Gas Reactor Globe",
     "craftingTime": 2,
     "inputs": {
@@ -2728,7 +2728,7 @@ export const RECIPES = [
   },
   {
     "id": "gas_reactor_gas_copper_enr2_1",
-    "name": "Pyrrolite Gas Production",
+    "name": "Pyrrolite Gas",
     "facility": "Gas Reactor Globe",
     "craftingTime": 2,
     "inputs": {
@@ -2742,7 +2742,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_carbon_powder_1",
-    "name": "Carbon Powder Production",
+    "name": "Carbon Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2755,7 +2755,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_copper_powder_1",
-    "name": "Cuprium Powder Production",
+    "name": "Cuprium Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2768,7 +2768,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_crystal_powder_1",
-    "name": "Origocrust Powder Production",
+    "name": "Origocrust Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2781,7 +2781,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_iron_powder_1",
-    "name": "Ferrium Powder Production",
+    "name": "Ferrium Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2794,7 +2794,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_originium_powder_1",
-    "name": "Originium Powder Production",
+    "name": "Originium Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2807,7 +2807,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_bbflower_powder_1_1",
-    "name": "Aketine Powder Production",
+    "name": "Aketine Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2820,7 +2820,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_grass_powder_1_1",
-    "name": "Jincao Powder Production",
+    "name": "Jincao Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2833,7 +2833,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_grass_powder_2_1",
-    "name": "Yazhen Powder Production",
+    "name": "Yazhen Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2846,7 +2846,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_moss_powder_1_1",
-    "name": "Buckflower Powder Production",
+    "name": "Buckflower Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2859,7 +2859,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_moss_powder_2_1",
-    "name": "Citrome Powder Production",
+    "name": "Citrome Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2872,7 +2872,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_plant_moss_powder_3_1",
-    "name": "Sandleaf Powder Production",
+    "name": "Sandleaf Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -2885,7 +2885,7 @@ export const RECIPES = [
   },
   {
     "id": "grinder_quartz_powder_1",
-    "name": "Amethyst Powder Production",
+    "name": "Amethyst Powder",
     "facility": "Shredding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3294,7 +3294,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_bbflower_1",
-    "name": "Aketine Production",
+    "name": "Aketine",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3307,7 +3307,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_grass_1_1",
-    "name": "Jincao Production",
+    "name": "Jincao",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3321,7 +3321,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_grass_2_1",
-    "name": "Yazhen Production",
+    "name": "Yazhen",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3335,7 +3335,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_moss_1_1",
-    "name": "Buckflower Production",
+    "name": "Buckflower",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3348,7 +3348,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_moss_2_1",
-    "name": "Citrome Production",
+    "name": "Citrome",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3361,7 +3361,7 @@ export const RECIPES = [
   },
   {
     "id": "planter_plant_moss_3_1",
-    "name": "Sandleaf Production",
+    "name": "Sandleaf",
     "facility": "Planting Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3374,7 +3374,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_copper_enr_1",
-    "name": "Hetonite Production (Fluid)",
+    "name": "Hetonite (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3389,7 +3389,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_copper_enr_2",
-    "name": "Hetonite Production (Fluid)",
+    "name": "Hetonite (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3404,7 +3404,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_copper_1",
-    "name": "Cuprium Solution Production (Fluid)",
+    "name": "Cuprium Solution (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3418,7 +3418,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_copper_2",
-    "name": "Cuprium Solution Production (Fluid)",
+    "name": "Cuprium Solution (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3432,7 +3432,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_liquid_xiranite_1",
-    "name": "Liquid Xiranite Production (Fluid)",
+    "name": "Liquid Xiranite (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3446,7 +3446,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_liquid_xiranite_2",
-    "name": "Liquid Xiranite Production (Fluid)",
+    "name": "Liquid Xiranite (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3460,7 +3460,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_plant_grass_1_1",
-    "name": "Jincao Solution Production (Fluid)",
+    "name": "Jincao Solution (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3474,7 +3474,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_plant_grass_1_2",
-    "name": "Jincao Solution Production (Fluid)",
+    "name": "Jincao Solution (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3488,7 +3488,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_plant_grass_2_1",
-    "name": "Yazhen Solution Production (Fluid)",
+    "name": "Yazhen Solution (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3502,7 +3502,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_plant_grass_2_2",
-    "name": "Yazhen Solution Production (Fluid)",
+    "name": "Yazhen Solution (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3516,7 +3516,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_xiranite_enr_1",
-    "name": "Liquid Heavy Xiranite Production (Fluid)",
+    "name": "Liquid Heavy Xiranite (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3530,7 +3530,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_xiranite_enr_2",
-    "name": "Liquid Heavy Xiranite Production (Fluid)",
+    "name": "Liquid Heavy Xiranite (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3544,7 +3544,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_xiranite_poly_1",
-    "name": "Xircon Effluent Production (Fluid)",
+    "name": "Xircon Effluent (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3559,7 +3559,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_liquid_xiranite_poly_2",
-    "name": "Xircon Effluent Production (Fluid)",
+    "name": "Xircon Effluent (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3574,7 +3574,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_xiranite_poly_1",
-    "name": "Xircon Production (Fluid)",
+    "name": "Xircon (Fluid)",
     "facility": "Reactor Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3589,7 +3589,7 @@ export const RECIPES = [
   },
   {
     "id": "pool_xiranite_poly_2",
-    "name": "Xircon Production (Fluid)",
+    "name": "Xircon (Fluid)",
     "facility": "Expanded Crucible",
     "craftingTime": 2,
     "inputs": {
@@ -3604,7 +3604,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_bbflower_1",
-    "name": "Aketine Seed Production",
+    "name": "Aketine Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3617,7 +3617,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_grass_1_1",
-    "name": "Jincao Seed Production",
+    "name": "Jincao Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3630,7 +3630,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_grass_2_1",
-    "name": "Yazhen Seed Production",
+    "name": "Yazhen Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3643,7 +3643,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_moss_1_1",
-    "name": "Buckflower Seed Production",
+    "name": "Buckflower Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3656,7 +3656,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_moss_2_1",
-    "name": "Citrome Seed Production",
+    "name": "Citrome Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3669,7 +3669,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_moss_3_1",
-    "name": "Sandleaf Seed Production",
+    "name": "Sandleaf Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3682,7 +3682,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_sp_1",
-    "name": "Reed Rye Seed Production",
+    "name": "Reed Rye Seed",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3695,7 +3695,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_sp_2",
-    "name": "Tartpepper Seeds Production",
+    "name": "Tartpepper Seeds",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3708,7 +3708,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_sp_3",
-    "name": "Redjade Ginseng Seeds Production",
+    "name": "Redjade Ginseng Seeds",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3721,7 +3721,7 @@ export const RECIPES = [
   },
   {
     "id": "seedcollector_plant_sp_4",
-    "name": "Amber Rice Seeds Production",
+    "name": "Amber Rice Seeds",
     "facility": "Seed-Picking Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3734,7 +3734,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_activity_xiranite_bottle_1",
-    "name": "Experimental Xiranite Bottle Production",
+    "name": "Experimental Xiranite Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3747,7 +3747,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_activity_xiranite_box_1",
-    "name": "Proto Chubby Lung Shell Production",
+    "name": "Proto Chubby Lung Shell",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3760,7 +3760,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_activity_xiranite_enr_bottle_1",
-    "name": "Experimental Heavy Xiranite Bottle Production",
+    "name": "Experimental Heavy Xiranite Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 20,
     "inputs": {
@@ -3773,7 +3773,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_copper_bottle_1",
-    "name": "Cuprium Bottle Production",
+    "name": "Cuprium Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3786,7 +3786,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_copper_enr_bottle_1",
-    "name": "Hetonite Bottle Production",
+    "name": "Hetonite Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3799,7 +3799,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_gas_activity_xiranite_enr_box_1",
-    "name": "Proto Chubby Lung Heavy Shell Production",
+    "name": "Proto Chubby Lung Heavy Shell",
     "facility": "Moulding Unit",
     "craftingTime": 10,
     "inputs": {
@@ -3813,7 +3813,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_gas_copper_jar_1",
-    "name": "Cuprium Canister Production",
+    "name": "Cuprium Canister",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3827,7 +3827,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_glass_bottle_1",
-    "name": "Amethyst Bottle Production",
+    "name": "Amethyst Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3840,7 +3840,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_glass_enr_bottle_1",
-    "name": "Cryston Bottle Production",
+    "name": "Cryston Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3853,7 +3853,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_iron_bottle_1",
-    "name": "Ferrium Bottle Production",
+    "name": "Ferrium Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3866,7 +3866,7 @@ export const RECIPES = [
   },
   {
     "id": "shaper_iron_enr_bottle_1",
-    "name": "Steel Bottle Production",
+    "name": "Steel Bottle",
     "facility": "Moulding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3879,7 +3879,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_carbon_enr_powder_1",
-    "name": "Dense Carbon Powder Production",
+    "name": "Dense Carbon Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3893,7 +3893,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_crystal_enr_powder_1",
-    "name": "Dense Origocrust Powder Production",
+    "name": "Dense Origocrust Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3907,7 +3907,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_iron_enr_powder_1",
-    "name": "Dense Ferrium Powder Production",
+    "name": "Dense Ferrium Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3921,7 +3921,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_originium_enr_powder_1",
-    "name": "Dense Originium Powder Production",
+    "name": "Dense Originium Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3935,7 +3935,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_plant_moss_enr_powder_1_1",
-    "name": "Ground Buckflower Powder Production",
+    "name": "Ground Buckflower Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3949,7 +3949,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_plant_moss_enr_powder_2_1",
-    "name": "Ground Citrome Powder Production",
+    "name": "Ground Citrome Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3963,7 +3963,7 @@ export const RECIPES = [
   },
   {
     "id": "thickener_quartz_enr_powder_1",
-    "name": "Cryston Powder Production",
+    "name": "Cryston Powder",
     "facility": "Grinding Unit",
     "craftingTime": 2,
     "inputs": {
@@ -3977,7 +3977,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_copper_poly_tool_1",
-    "name": "Proto Xiran-Cuprium Frame Production",
+    "name": "Proto Xiran-Cuprium Frame",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -3991,7 +3991,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_copper_tool_1",
-    "name": "Proto Cuprium Frame Production",
+    "name": "Proto Cuprium Frame",
     "facility": "Packaging Unit",
     "craftingTime": 2,
     "inputs": {
@@ -4005,7 +4005,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_enr_hulu_1",
-    "name": "Xiranite Jade Gourd Production",
+    "name": "Xiranite Jade Gourd",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4019,7 +4019,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_enr_lung",
-    "name": "Heavy Xiranite Chubby Lung Production",
+    "name": "Heavy Xiranite Chubby Lung",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4033,7 +4033,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_enr_tool_1",
-    "name": "Experimental Xiran-Hue Atomizer Production",
+    "name": "Experimental Xiran-Hue Atomizer",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4047,7 +4047,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_hulu_1",
-    "name": "Xiranite Gourd Production",
+    "name": "Xiranite Gourd",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4061,7 +4061,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_activity_xiranite_lung",
-    "name": "Xiranite Chubby Lung Production",
+    "name": "Xiranite Chubby Lung",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4075,7 +4075,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_battery_1_1",
-    "name": "LC Valley Battery Production",
+    "name": "LC Valley Battery",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4089,7 +4089,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_battery_2_1",
-    "name": "SC Valley Battery Production",
+    "name": "SC Valley Battery",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4103,7 +4103,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_battery_3_1",
-    "name": "HC Valley Battery Production",
+    "name": "HC Valley Battery",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4117,7 +4117,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_battery_4_1",
-    "name": "LC Wuling Battery Production",
+    "name": "LC Wuling Battery",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4131,7 +4131,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_battery_5_1",
-    "name": "SC Wuling Battery Production",
+    "name": "SC Wuling Battery",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4145,7 +4145,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_bomb_1_1",
-    "name": "Industrial Explosive Production",
+    "name": "Industrial Explosive",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4159,7 +4159,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_filter_core_2",
-    "name": "Separator Core Production",
+    "name": "Separator Core",
     "facility": "Packaging Unit",
     "craftingTime": 2,
     "inputs": {
@@ -4173,7 +4173,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_food_4_1",
-    "name": "Jincao Drink Production",
+    "name": "Jincao Drink",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4187,7 +4187,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_food_5_1",
-    "name": "Jincao Tea Production",
+    "name": "Jincao Tea",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4201,7 +4201,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_rec_hp_4_1",
-    "name": "Yazhen Syringe [C] Production",
+    "name": "Yazhen Syringe [C]",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4215,7 +4215,7 @@ export const RECIPES = [
   },
   {
     "id": "tools_proc_rec_hp_5_1",
-    "name": "Yazhen Syringe [A] Production",
+    "name": "Yazhen Syringe [A]",
     "facility": "Packaging Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4229,7 +4229,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_1",
-    "name": "Amethyst Component Production",
+    "name": "Amethyst Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4243,7 +4243,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_2",
-    "name": "Ferrium Component Production",
+    "name": "Ferrium Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4257,7 +4257,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_3",
-    "name": "Cryston Component Production",
+    "name": "Cryston Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4271,7 +4271,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_4",
-    "name": "Xiranite Component Production",
+    "name": "Xiranite Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4285,7 +4285,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_4_1",
-    "name": "Cuprium Component Production",
+    "name": "Cuprium Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4299,7 +4299,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_4_2",
-    "name": "Hetonite Component Production",
+    "name": "Hetonite Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4313,7 +4313,7 @@ export const RECIPES = [
   },
   {
     "id": "winder_equip_script_4_3",
-    "name": "Pyrrolite Component Production",
+    "name": "Pyrrolite Component",
     "facility": "Gearing Unit",
     "craftingTime": 10,
     "inputs": {
@@ -4327,7 +4327,7 @@ export const RECIPES = [
   },
   {
     "id": "xiranite_oven_muck_xiranite_1",
-    "name": "Bumper-Rich Production",
+    "name": "Bumper-Rich",
     "facility": "Forge of the Sky",
     "craftingTime": 2,
     "inputs": {
@@ -4341,7 +4341,7 @@ export const RECIPES = [
   },
   {
     "id": "xiranite_oven_xiranite_enr_powder_1",
-    "name": "Heavy Xiranite Production",
+    "name": "Heavy Xiranite",
     "facility": "Forge of the Sky",
     "craftingTime": 10,
     "inputs": {
@@ -4355,7 +4355,7 @@ export const RECIPES = [
   },
   {
     "id": "xiranite_oven_xiranite_powder_1",
-    "name": "Xiranite Production",
+    "name": "Xiranite",
     "facility": "Forge of the Sky",
     "craftingTime": 2,
     "inputs": {
@@ -4369,7 +4369,7 @@ export const RECIPES = [
   },
   {
     "id": "xiranite_oven_xiranite_powder_2",
-    "name": "Xiranite Production",
+    "name": "Xiranite",
     "facility": "Forge of the Sky",
     "craftingTime": 2,
     "inputs": {

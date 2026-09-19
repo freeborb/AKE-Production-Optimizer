@@ -189,8 +189,8 @@ input[type="search"] {
 
 .recipe-row {
   display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 2px 8px;
+  grid-template-columns: 18px minmax(150px, 220px) 1fr;
+  gap: 4px 10px;
   align-items: start;
   padding: 6px 8px;
   background: var(--panel-2);
@@ -205,12 +205,48 @@ input[type="search"] {
 
 .recipe-name {
   font-weight: 600;
+  padding-top: 1px;
 }
 
 .recipe-detail {
-  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   font-size: 12px;
+  min-width: 0;
+}
+
+.detail-line {
+  color: var(--text);
+  word-break: break-word;
+}
+
+.detail-line b.tag {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.detail-line b.tag.in {
+  color: var(--warn);
+}
+
+.detail-line b.tag.out {
+  color: var(--accent);
+}
+
+.detail-meta {
   color: var(--muted);
+  word-break: break-word;
+}
+
+@media (max-width: 720px) {
+  .recipe-row {
+    grid-template-columns: 18px 1fr;
+  }
+  .recipe-detail {
+    grid-column: 2;
+    margin-top: 2px;
+  }
 }
 
 button#solve {

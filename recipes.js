@@ -47,18 +47,45 @@ function matchesFilter(r) {
   return r.name.toLowerCase().includes(state.filter);
 }
 
-function detailText(r) {
+function detailLine(r) {
   const parts = [];
   if (r.facility) parts.push(r.facility + " (" + r.craftingTime + "s)");
-  const inText = Object.entries(r.inputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
-  if (inText) parts.push("in " + inText);
-  const outText = Object.entries(r.outputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
-  if (outText) parts.push("out " + outText);
   const res = Object.entries(r.residues || {});
   if (res.length) parts.push("residue " + res.map(([m, q]) => fmt(q) + " " + m).join(", "));
   if (r.source) parts.push(capText(r));
+  if (r.energy) parts.push(fmt(r.energy) + " kJ/run");
   if (r.regions) parts.push("[" + r.regions.map((k) => REGION_LABEL[k]).join(", ") + "]");
   return parts.join("  |  ");
+}
+
+function ioLine(tagClass, tagText, materials) {
+  const line = document.createElement("span");
+  line.className = "detail-line";
+  const tag = document.createElement("b");
+  tag.className = "tag " + tagClass;
+  tag.textContent = tagText;
+  const text = document.createElement("span");
+  text.textContent = materials;
+  line.appendChild(tag);
+  line.appendChild(text);
+  return line;
+}
+
+function rowDetail(r) {
+  const container = document.createElement("div");
+  container.className = "recipe-detail";
+  const inText = Object.entries(r.inputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
+  if (inText) container.appendChild(ioLine("in", "IN", inText));
+  const outText = Object.entries(r.outputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
+  if (outText) container.appendChild(ioLine("out", "OUT", outText));
+  const meta = detailLine(r);
+  if (meta) {
+    const metaEl = document.createElement("span");
+    metaEl.className = "detail-meta";
+    metaEl.textContent = meta;
+    container.appendChild(metaEl);
+  }
+  return container;
 }
 
 function countText(showing) {
@@ -85,12 +112,9 @@ function render() {
     const name = document.createElement("span");
     name.className = "recipe-name";
     name.textContent = r.name;
-    const detail = document.createElement("span");
-    detail.className = "recipe-detail";
-    detail.textContent = detailText(r);
     row.appendChild(cb);
     row.appendChild(name);
-    row.appendChild(detail);
+    row.appendChild(rowDetail(r));
     els.list.appendChild(row);
   }
   els.count.textContent = countText(shown.length);
