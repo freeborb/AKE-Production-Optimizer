@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKE Production Optimizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>AKE Production Optimizer</h1>
+    <p class="muted">Linear-programming rate calculator for production lines with residues, recycling loops, and battery-powered energy.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" id="controls">
+      <h2>Objective</h2>
+      <label class="field-grid">
+        <span>Mode</span>
+        <select id="mode">
+          <option value="maximize">Maximize output (given resources)</option>
+          <option value="minimize">Minimize inputs (for a target output)</option>
+        </select>
+      </label>
+      <label class="field-grid">
+        <span>Target product</span>
+        <select id="target"></select>
+      </label>
+      <label class="field-grid" id="amount-wrap">
+        <span>Target amount (/min)</span>
+        <input id="target-amount" type="number" min="0" step="any" value="1" />
+      </label>
+
+      <h2 id="availability-label">Available raw material (per min)</h2>
+      <div id="availability" class="stack"></div>
+
+      <h2>Recipes</h2>
+      <p class="muted" id="material-count"></p>
+      <div id="recipe-list" class="stack"></div>
+
+      <button id="solve">Solve</button>
+    </section>
+
+    <section class="panel" id="results">
+      <div class="status-line">
+        <span id="status">Ready</span>
+      </div>
+      <div id="objective" class="objective muted"></div>
+
+      <h2>Recipe run rates</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Recipe</th>
+            <th>Rate</th>
+            <th>Main output</th>
+          </tr>
+        </thead>
+        <tbody id="run-rows"></tbody>
+      </table>
+
+      <h2>Material balance (/min)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Produced</th>
+            <th>Consumed</th>
+            <th>Net</th>
+          </tr>
+        </thead>
+        <tbody id="balance-rows"></tbody>
+      </table>
+
+      <details>
+        <summary>Generated LP model</summary>
+        <pre id="lp-text"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="muted">
+    Recipes live in <code>data/recipes.js</code>. Edit there and refresh. Ratio notes: all flows are per minute.
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
