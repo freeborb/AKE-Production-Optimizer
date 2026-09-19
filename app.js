@@ -4,7 +4,7 @@ import { collectMaterials } from "./lpmodel.js";
 
 const state = {
   mode: "maximize",
-  target: "Product",
+  target: "Steel",
   targetAmount: 1,
   availability: {},
   enabled: {}
@@ -12,7 +12,7 @@ const state = {
 
 for (const r of RECIPES) {
   state.enabled[r.id] = true;
-  if (r.source) state.availability[r.id] = 100;
+  if (r.source) state.availability[r.id] = r.capacity ?? 100;
 }
 
 const els = {

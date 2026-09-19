@@ -1,0 +1,12 @@
+{
+  "name": "ake-production-optimizer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:recipes": "node tools/build-recipes.mjs",
+    "test": "node tools/test-recipes.mjs"
+  },
+  "devDependencies": {
+    "highs": "^1.15.3"
+  }
+}

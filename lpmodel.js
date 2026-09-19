@@ -68,11 +68,11 @@ export function buildLP(recipes, opts = {}) {
   lines.push("  obj: " + (objTerms.length ? objTerms.join(" ") : "0 Next"));
   lines.push("Subject To");
   for (const [m, termsList] of rows) {
-    if (termsList.length) lines.push("  bal_" + m + ": " + termsList.map(([v, c]) => term(c, v)).join(" ") + " >= 0");
+    if (termsList.length) lines.push("  bal_" + varName(m) + ": " + termsList.map(([v, c]) => term(c, v)).join(" ") + " >= 0");
   }
   if (mode === "minimize" && target) {
     lines.push(
-      "  req_" + target + ": " + rows.get(target).map(([v, c]) => term(c, v)).join(" ") + " >= " + fmt(targetAmount)
+      "  req_" + varName(target) + ": " + rows.get(target).map(([v, c]) => term(c, v)).join(" ") + " >= " + fmt(targetAmount)
     );
   }
   if (capacities.size) {
