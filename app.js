@@ -1,14 +1,10 @@
 import { RECIPES } from "./data/recipes.js";
 import { solveProblem } from "./solver.js";
-import { loadEnabled } from "./store.js";
-import { validInRegion, nodeQualities, sourceTotal } from "./lpmodel.js";
+import { loadEnabled, REGION_KEY } from "./store.js";
+import { validInRegion, nodeQualities, sourceTotal, sourceUnlimited } from "./lpmodel.js";
+import { currentRegion, regionOptions, setRegion, initRegionUI } from "./region.js";
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
-
-const REGIONS = [
-  { key: "valley_4", label: "Valley 4" },
-  { key: "wuling", label: "Wuling" }
-];
 
 const REGION_STORE_KEY = "ake-optimizer-regions-v1";
 const RESULT_STORE_KEY = "ake-optimizer-region-results-v1";
@@ -25,16 +21,40 @@ function saveJSON(key, obj) {
   localStorage.setItem(key, JSON.stringify(obj));
 }
 
+function regionKeyOf(v) {
+  const n = Number(v);
+  if (n === 1 || n === 2 || n === 3) return n;
+  return v === "valley_4" ? 1 : v === "wuling" ? 2 : null;
+}
+
+function migrateMap(raw) {
+  const out = {};
+  for (const [k, v] of Object.entries(raw || {})) {
+    const nk = regionKeyOf(k);
+    if (nk != null) out[nk] = v;
+  }
+  return out;
+}
+
 const persisted = loadJSON(REGION_STORE_KEY);
-const storedResults = loadJSON(RESULT_STORE_KEY);
+const storedResults = migrateMap(loadJSON(RESULT_STORE_KEY));
+
+const legacyRegion = regionKeyOf(persisted.region);
+if (legacyRegion != null && localStorage.getItem(REGION_KEY) === null) setRegion(legacyRegion);
 
 const state = {
-  region: REGIONS.some((r) => r.key === persisted.region) ? persisted.region : "valley_4",
+  region: currentRegion(),
   regions: {},
-  enabled: loadEnabled(RECIPES)
+  enabled: {}
 };
 
-for (const reg of REGIONS) {
+for (const id of regionOptions()) {
+  state.enabled[id] = loadEnabled(RECIPES, id);
+}
+
+const savedStates = migrateMap(persisted.states);
+
+for (const id of regionOptions()) {
   const def = {
     mode: "maximize",
     target: "Steel",
@@ -42,11 +62,11 @@ for (const reg of REGIONS) {
     availability: {}
   };
   for (const r of RECIPES) {
-    if (!r.source || !validInRegion(r, reg.key)) continue;
-    def.availability[r.id] = { ...(r.defaults?.[reg.key] || {}) };
+    if (!r.source || sourceUnlimited(r, id) || !validInRegion(r, id)) continue;
+    def.availability[r.id] = { ...(r.defaults?.[id] || {}) };
   }
-  const saved = persisted.states?.[reg.key] || {};
-  state.regions[reg.key] = {
+  const saved = savedStates[id] || {};
+  state.regions[id] = {
     mode: saved.mode || def.mode,
     target: saved.target || def.target,
     targetAmount: saved.targetAmount ?? def.targetAmount,
@@ -71,11 +91,10 @@ function persistRegions() {
 }
 
 function validRegionRecipes() {
-  return RECIPES.filter((r) => state.enabled[r.id] && validInRegion(r, state.region));
+  return RECIPES.filter((r) => state.enabled[state.region][r.id] && validInRegion(r, state.region));
 }
 
 const els = {
-  region: document.getElementById("region"),
   mode: document.getElementById("mode"),
   target: document.getElementById("target"),
   targetAmount: document.getElementById("target-amount"),
@@ -97,17 +116,6 @@ function producedMaterials() {
     for (const m in r.residues || {}) set.add(m);
   }
   return [...set].sort();
-}
-
-function fillRegionSelect() {
-  els.region.innerHTML = "";
-  for (const reg of REGIONS) {
-    const opt = document.createElement("option");
-    opt.value = reg.key;
-    opt.textContent = reg.label;
-    if (reg.key === state.region) opt.selected = true;
-    els.region.appendChild(opt);
-  }
 }
 
 function fillTargetSelect() {
@@ -134,18 +142,29 @@ function renderAvailability() {
   const s = currentState();
   for (const r of RECIPES) {
     if (!r.source || !validInRegion(r, state.region)) continue;
-    const counts = (s.availability[r.id] = s.availability[r.id] || {});
     const container = document.createElement("div");
     container.className = "avail-row";
     const name = document.createElement("span");
+    name.className = "avail-name";
     name.textContent = r.name;
     container.appendChild(name);
+    if (sourceUnlimited(r, state.region)) {
+      const lim = document.createElement("span");
+      lim.className = "avail-unlimited muted";
+      lim.textContent = "unlimited";
+      container.appendChild(lim);
+      els.availability.appendChild(container);
+      continue;
+    }
+    const counts = (s.availability[r.id] = s.availability[r.id] || {});
+    const controls = document.createElement("div");
+    controls.className = "avail-controls";
     const inputsWrap = document.createElement("div");
     inputsWrap.className = "avail-inputs";
     for (const q of nodeQualities(r)) {
       const qlabel = document.createElement("span");
       qlabel.className = "avail-q";
-      qlabel.textContent = QUALITY_LABEL[q] || q;
+      qlabel.textContent = "Max " + (QUALITY_LABEL[q] || q);
       inputsWrap.appendChild(qlabel);
       const input = document.createElement("input");
       input.type = "number";
@@ -156,17 +175,25 @@ function renderAvailability() {
       input.dataset.q = q;
       input.addEventListener("input", () => {
         counts[q] = Number(input.value) || 0;
-        totalEl.textContent = fmtNum(sourceTotal(r, state.region, counts)) + "/min";
+        totalEl.textContent = rateText(r, state.region, counts);
       });
       inputsWrap.appendChild(input);
     }
     const totalEl = document.createElement("span");
     totalEl.className = "avail-total";
-    totalEl.textContent = fmtNum(sourceTotal(r, state.region, counts)) + "/min";
-    inputsWrap.appendChild(totalEl);
-    container.appendChild(inputsWrap);
+    totalEl.textContent = rateText(r, state.region, counts);
+    controls.appendChild(inputsWrap);
+    controls.appendChild(totalEl);
+    container.appendChild(controls);
     els.availability.appendChild(container);
   }
+}
+
+function rateText(r, region, counts) {
+  const max = sourceTotal(r, region, counts);
+  const saved = storedResults[state.region];
+  const used = (saved && saved.rates ? saved.rates[r.id] : 0) || 0;
+  return fmtNum(used) + " / " + fmtNum(max);
 }
 
 function fmtNum(n) {
@@ -187,7 +214,6 @@ function captureControls() {
 
 function applyStateToControls() {
   const s = currentState();
-  els.region.value = state.region;
   els.mode.value = s.mode;
   fillTargetSelect();
   els.targetAmount.value = s.targetAmount;
@@ -197,9 +223,7 @@ function applyStateToControls() {
 function updateModeUI() {
   const isMin = currentState().mode === "minimize";
   els.amountWrap.style.display = isMin ? "" : "none";
-  document.getElementById("availability-label").textContent = isMin
-    ? "Raw nodes (limits)"
-    : "Raw nodes (available)";
+  document.getElementById("availability-label").textContent = "Resource nodes";
 }
 
 function clearResult() {
@@ -270,16 +294,16 @@ function renderResult(result) {
   els.lpText.textContent = result.lp || "(Re-solve to regenerate the LP model.)";
 }
 
-els.region.addEventListener("change", () => {
+function handleRegionChange(newRegion) {
   captureControls();
   persistRegions();
-  state.region = els.region.value;
+  state.region = newRegion;
   applyStateToControls();
   updateModeUI();
-  const saved = storedResults[state.region];
+  const saved = storedResults[newRegion];
   if (saved && saved.status === "Optimal") renderResult(saved);
   else clearResult();
-});
+}
 
 els.mode.addEventListener("change", () => {
   captureControls();
@@ -296,7 +320,7 @@ els.solve.addEventListener("click", async () => {
   }
   const totals = {};
   for (const r of recipes) {
-    if (r.source) totals[r.id] = sourceTotal(r, state.region, s.availability[r.id] || {});
+    if (r.source && !r.unlimited) totals[r.id] = sourceTotal(r, state.region, s.availability[r.id] || {});
   }
   const opts = {
     mode: s.mode,
@@ -317,10 +341,11 @@ els.solve.addEventListener("click", async () => {
     };
     saveJSON(RESULT_STORE_KEY, storedResults);
     persistRegions();
+    renderAvailability();
   }
 });
 
-fillRegionSelect();
+initRegionUI(document.getElementById("region"), handleRegionChange);
 applyStateToControls();
 updateModeUI();
 const initialResult = storedResults[state.region];

@@ -1,8 +1,8 @@
 :root {
-  --bg: #0f1419;
-  --panel: #171f2a;
-  --panel-2: #1d2733;
-  --line: #2a3644;
+  --bg: #0e0e10;
+  --panel: #161618;
+  --panel-2: #1d1d21;
+  --line: #28282e;
   --text: #dbe4ee;
   --muted: #8596a7;
   --accent: #4cc38a;
@@ -44,8 +44,20 @@ header {
 
 .nav {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 4px;
+}
+
+.region-select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  align-self: center;
 }
 
 .nav a {
@@ -59,18 +71,19 @@ header {
 
 .nav a:hover {
   color: var(--text);
-  border-color: var(--accent);
+  border-color: var(--region-color, var(--accent));
 }
 
 .nav a.active {
-  color: #fff;
-  background: var(--accent-dim);
-  border-color: var(--accent);
+  color: var(--region-color, var(--accent));
+  background: var(--panel);
+  border-color: var(--region-color, var(--accent));
 }
 
 h1 {
   margin: 0 0 4px;
   font-size: 20px;
+  color: var(--region-color, var(--accent));
 }
 
 h2 {
@@ -78,7 +91,7 @@ h2 {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--region-color, var(--accent));
 }
 
 .muted {
@@ -167,25 +180,38 @@ input[type="search"] {
 }
 
 .avail-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4px 12px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   padding: 6px 8px;
   background: var(--panel-2);
   border: 1px solid var(--line);
   border-radius: 6px;
 }
 
-.avail-inputs {
+.avail-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.avail-controls {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 6px 10px;
+}
+
+.avail-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-width: 0;
 }
 
 .avail-q {
   color: var(--muted);
   font-size: 12px;
+  min-width: 40px;
 }
 
 .avail-inputs input {
@@ -193,11 +219,15 @@ input[type="search"] {
 }
 
 .avail-total {
-  color: var(--accent);
+  color: var(--region-color, var(--accent));
   font-style: italic;
-  margin-left: 4px;
-  min-width: 74px;
-  text-align: right;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.avail-unlimited {
+  font-size: 12px;
+  font-style: italic;
 }
 
 .recipe-row {
@@ -244,7 +274,27 @@ input[type="search"] {
 }
 
 .detail-line b.tag.out {
-  color: var(--accent);
+  color: var(--region-color, var(--accent));
+}
+
+.tag-chips {
+  display: inline;
+}
+
+.mat-chip {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 4px;
+  padding: 0 6px;
+  margin: 1px 4px 1px 0;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.mat-chip.out {
+  border-color: var(--region-color, var(--accent));
+  color: var(--region-color, var(--accent));
 }
 
 .detail-meta {
@@ -268,15 +318,16 @@ button#solve {
   padding: 10px;
   font-size: 14px;
   font-weight: 600;
-  background: var(--accent-dim);
-  color: #fff;
-  border: 1px solid var(--accent);
+  background: var(--panel);
+  color: var(--region-color, var(--accent));
+  border: 1px solid var(--region-color, var(--accent));
   border-radius: 8px;
   cursor: pointer;
 }
 
 button#solve:hover {
-  background: var(--accent);
+  background: var(--region-color, var(--accent));
+  color: var(--bg);
 }
 
 .status-line {
@@ -286,7 +337,7 @@ button#solve:hover {
 .objective {
   margin-top: 6px;
   font-size: 15px;
-  color: var(--accent);
+  color: var(--region-color, var(--accent));
 }
 
 table {
@@ -308,15 +359,59 @@ th {
 }
 
 td.pos {
-  color: var(--accent);
+  color: var(--region-color, var(--accent));
 }
 
 td.neg {
   color: var(--bad);
 }
 
+.region-tag {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  margin-left: 6px;
+}
+
 details {
   margin-top: 18px;
+}
+
+details.facility {
+  margin-top: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+details.facility > summary {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: 4px 10px;
+  align-items: start;
+  padding: 6px 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.facility-recipe {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 4px 10px;
+  align-items: start;
+  padding: 4px 2px;
 }
 
 summary {

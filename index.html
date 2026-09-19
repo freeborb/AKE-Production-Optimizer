@@ -10,21 +10,19 @@
   <header>
     <div class="brand">
       <h1>AKE Production Optimizer</h1>
-      <p class="muted">Linear-programming rate calculator for production lines with residues, recycling loops, and battery-powered energy.</p>
     </div>
     <nav class="nav">
+      <select id="region" class="region-select" aria-label="Region"></select>
       <a class="active" href="index.html">Calculator</a>
       <a href="recipes.html">Recipes</a>
+      <a href="resources.html">Resources</a>
+      <a href="facilities.html">Facilities</a>
     </nav>
   </header>
 
   <main class="layout">
     <section class="panel" id="controls">
       <h2>Objective</h2>
-      <label class="field-grid">
-        <span>Region</span>
-        <select id="region"></select>
-      </label>
       <label class="field-grid">
         <span>Mode</span>
         <select id="mode">
@@ -41,10 +39,8 @@
         <input id="target-amount" type="number" min="0" step="any" value="1" />
       </label>
 
-      <h2 id="availability-label">Available raw material (per min)</h2>
+      <h2 id="availability-label">Resource nodes</h2>
       <div id="availability" class="stack"></div>
-
-      <p class="muted">Enable/disable recipes on the <a href="recipes.html">Recipes</a> page.</p>
 
       <button id="solve">Solve</button>
     </section>
@@ -86,10 +82,6 @@
       </details>
     </section>
   </main>
-
-  <footer class="muted">
-    Recipes live in <code>data/recipes.js</code>. Edit there and refresh. Ratio notes: all flows are per minute.
-  </footer>
 
   <script type="module" src="app.js"></script>
 </body>

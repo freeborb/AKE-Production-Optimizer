@@ -122,99 +122,94 @@ const facilityPower = parseFacilityPowers(
   "src/data/power.ts"
 );
 
-const VALLEY = "valley_4";
-const WULING = "wuling";
-
-const ORE_NODES = { hp: { rate: 20 }, lp: { rate: 10 } };
-const LIQUID_NODES = { node: { rate: 60 } };
+const VALLEY = 1;
+const WULING = 2;
 
 const SOURCES = [
   {
     id: "source_originium_ore",
     item: "item_originium_ore",
     tag: "Mine",
-    energy: 0,
-    nodes: ORE_NODES,
+    region: 0,
+    rate: 10,
+    highPurity: true,
     defaults: { [VALLEY]: { hp: 28, lp: 0 }, [WULING]: { hp: 22, lp: 10 } },
   },
   {
     id: "source_quartz_sand",
     item: "item_quartz_sand",
     tag: "Mine",
-    energy: 0,
-    nodes: ORE_NODES,
+    rate: 10,
+    highPurity: true,
     defaults: { [VALLEY]: { hp: 12, lp: 0 } },
-    regions: [VALLEY],
+    region: VALLEY,
   },
   {
     id: "source_iron_ore",
     item: "item_iron_ore",
     tag: "Mine",
-    energy: 0,
-    nodes: ORE_NODES,
+    region: 0,
+    rate: 10,
+    highPurity: true,
     defaults: { [VALLEY]: { hp: 54, lp: 0 }, [WULING]: { hp: 6, lp: 0 } },
   },
   {
     id: "source_copper_ore",
     item: "item_copper_ore",
     tag: "Mine",
-    energy: 0,
-    nodes: ORE_NODES,
+    rate: 10,
+    highPurity: true,
     defaults: { [WULING]: { hp: 21, lp: 0 } },
-    regions: [WULING],
+    region: WULING,
   },
   {
     id: "source_liquid_water",
     item: "item_liquid_water",
     tag: "Pump",
-    energy: 10,
-    nodes: LIQUID_NODES,
-    defaults: { [VALLEY]: { node: 10 }, [WULING]: { node: 10 } },
+    region: 0,
+    rate: 60,
   },
   {
     id: "source_liquid_acid",
     item: "item_liquid_acid",
     tag: "Pump",
-    energy: 20,
-    nodes: LIQUID_NODES,
-    defaults: { [WULING]: { node: 10 } },
-    regions: [WULING],
+    rate: 60,
+    region: WULING,
   },
   {
     id: "source_gas_inert",
     item: "item_gas_inert",
     tag: "Extract",
-    energy: 0,
-    nodes: ORE_NODES,
+    rate: 10,
+    highPurity: true,
     defaults: { [WULING]: { hp: 23, lp: 0 } },
-    regions: [WULING],
+    region: WULING,
   },
   {
     id: "source_gas_xiranite",
     item: "item_gas_xiranite",
     tag: "Extract",
-    energy: 0,
-    nodes: ORE_NODES,
+    rate: 10,
+    highPurity: true,
     defaults: { [WULING]: { hp: 5, lp: 0 } },
-    regions: [WULING],
+    region: WULING,
   },
   {
     id: "source_muck",
     item: "item_muck_feces_1",
     tag: "Collect",
-    energy: 0,
-    nodes: { node: { rate: 30 } },
+    rate: 30,
     defaults: { [WULING]: { node: 10 } },
-    regions: [WULING],
+    region: WULING,
   },
 ];
 
 const BURNS = [
-  { recipe: "burn_item_proc_battery_1", battery: "item_proc_battery_1", energy: 220 * 40, regions: [VALLEY] },
-  { recipe: "burn_item_proc_battery_2", battery: "item_proc_battery_2", energy: 420 * 40, regions: [VALLEY] },
-  { recipe: "burn_item_proc_battery_3", battery: "item_proc_battery_3", energy: 1100 * 40, regions: [VALLEY] },
-  { recipe: "burn_item_proc_battery_4", battery: "item_proc_battery_4", energy: 1600 * 40, regions: [WULING] },
-  { recipe: "burn_item_proc_battery_5", battery: "item_proc_battery_5", energy: 3200 * 40, regions: [WULING] },
+  { recipe: "burn_item_proc_battery_1", battery: "item_proc_battery_1", output: 220 * 40, region: VALLEY },
+  { recipe: "burn_item_proc_battery_2", battery: "item_proc_battery_2", output: 420 * 40, region: VALLEY },
+  { recipe: "burn_item_proc_battery_3", battery: "item_proc_battery_3", output: 1100 * 40, region: VALLEY },
+  { recipe: "burn_item_proc_battery_4", battery: "item_proc_battery_4", output: 1600 * 40, region: WULING },
+  { recipe: "burn_item_proc_battery_5", battery: "item_proc_battery_5", output: 3200 * 40, region: WULING },
 ];
 
 const SKIP_RECIPES = new Set([
@@ -280,8 +275,6 @@ for (const entry of parseRecipeEntries(readRel("src/data/recipes.ts"))) {
   }
 
   const facilityName = facilityId ? localeFacility[facilityId] || facilityId : "?";
-  const power = facilityId ? facilityPower[facM[1]] : 0;
-  const energy = Math.round(power * craftingTime * 1e6) / 1e6;
 
   recipes.push({
     id: recipeId,
@@ -290,7 +283,6 @@ for (const entry of parseRecipeEntries(readRel("src/data/recipes.ts"))) {
     craftingTime,
     inputs,
     outputs,
-    energy,
   });
 }
 
@@ -302,12 +294,12 @@ for (const s of SOURCES) {
     name: s.tag + " " + name,
     inputs: {},
     outputs: { [name]: 1 },
-    energy: s.energy,
     source: true,
-    nodes: s.nodes,
-    defaults: s.defaults,
+    rate: s.rate,
   };
-  if (s.regions) recipe.regions = s.regions;
+  if (s.highPurity) recipe.highPurity = true;
+  if (s.defaults) recipe.defaults = s.defaults;
+  if (s.region != null) recipe.region = s.region;
   recipes.push(recipe);
 }
 
@@ -320,10 +312,9 @@ for (const b of BURNS) {
     facility: "Thermal Bank",
     craftingTime: 40,
     inputs: { [batteryName]: 1 },
-    outputs: { Energy: b.energy },
-    energy: 0,
+    outputs: { Energy: b.output },
   };
-  if (b.regions) recipe.regions = b.regions;
+  if (b.region) recipe.region = b.region;
   recipes.push(recipe);
 }
 

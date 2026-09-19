@@ -1,17 +1,28 @@
 import { RECIPES } from "./data/recipes.js";
 import { loadEnabled, saveEnabled } from "./store.js";
-import { nodeQualities, nodeRate, sourceTotal } from "./lpmodel.js";
+import { nodeQualities, nodeRate, sourceTotal, validInRegion } from "./lpmodel.js";
+import { currentRegion, regionOptions, regionLabel, regionTagElement, initRegionUI } from "./region.js";
 
-const REGION_LABEL = { valley_4: "Valley 4", wuling: "Wuling" };
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
 const state = {
-  enabled: loadEnabled(RECIPES),
   filter: "",
   facility: ""
 };
 
+const enabledByRegion = {};
+for (const id of regionOptions()) enabledByRegion[id] = loadEnabled(RECIPES, id);
+
+function currentEnabled() {
+  return enabledByRegion[currentRegion()];
+}
+
+function regionRecipes() {
+  return RECIPES.filter((r) => validInRegion(r, currentRegion()));
+}
+
 const els = {
+  region: document.getElementById("region"),
   search: document.getElementById("search"),
   facility: document.getElementById("facility"),
   count: document.getElementById("enabled-count"),
@@ -34,15 +45,20 @@ function fmt(n) {
 
 function capText(r) {
   const parts = [];
+  if (!r.defaults || !Object.keys(r.defaults).length) parts.push("unlimited");
   const quals = nodeQualities(r);
   if (quals.length) {
-    parts.push(quals.map((q) => (QUALITY_LABEL[q] || q) + " " + fmt(nodeRate(r, q)) + "/min").join(", "));
+    parts.push(
+      quals
+        .map((q) => (q === "node" ? "Node" : q.toUpperCase()) + " " + fmt(nodeRate(r, q)) + "/min")
+        .join(" | ")
+    );
   }
   const defs = Object.entries(r.defaults || {});
   if (defs.length) {
     parts.push(
       "default " +
-        defs.map(([reg, counts]) => REGION_LABEL[reg] + " " + countsText(counts, r)).join(" | ")
+        defs.map(([reg, counts]) => regionLabel(Number(reg)) + " " + countsText(counts, r)).join(" | ")
     );
   }
   return parts.join("  |  ");
@@ -52,6 +68,57 @@ function countsText(counts, r) {
   return nodeQualities(r)
     .map((q) => (counts[q] ?? 0) + " " + (QUALITY_LABEL[q] || q))
     .join(" + ") + " = " + fmt(sourceTotal(r, null, counts)) + "/min";
+}
+
+function detailLine(r) {
+  const parts = [];
+  if (r.facility) parts.push(r.facility + " (" + r.craftingTime + "s)");
+  const res = Object.entries(r.residues || {});
+  if (res.length) parts.push("residue " + res.map(([m, q]) => fmt(q) + " " + m).join(", "));
+  if (r.source) parts.push(capText(r));
+  if (r.source) {
+    if (r.energy) parts.push(fmt(r.energy) + " e/unit");
+  } else if (r.energy) {
+    parts.push(fmt(r.energy) + " kJ/run");
+  }
+  return parts.join("  |  ");
+}
+
+function ioLine(tagClass, tagText, materials) {
+  const line = document.createElement("span");
+  line.className = "detail-line";
+  const tag = document.createElement("b");
+  tag.className = "tag " + tagClass;
+  tag.textContent = tagText;
+  line.appendChild(tag);
+  const chips = document.createElement("span");
+  chips.className = "tag-chips";
+  for (const [m, q] of materials) {
+    const chip = document.createElement("span");
+    chip.className = "mat-chip" + (tagClass === "out" ? " out" : "");
+    chip.textContent = fmt(q) + " " + m;
+    chips.appendChild(chip);
+  }
+  line.appendChild(chips);
+  return line;
+}
+
+function rowDetail(r) {
+  const container = document.createElement("div");
+  container.className = "recipe-detail";
+  const ins = Object.entries(r.inputs);
+  if (ins.length) container.appendChild(ioLine("in", "IN", ins));
+  const outs = Object.entries(r.outputs);
+  if (outs.length) container.appendChild(ioLine("out", "OUT", outs));
+  const meta = detailLine(r);
+  if (meta || r.region != null) {
+    const metaEl = document.createElement("span");
+    metaEl.className = "detail-meta";
+    if (meta) metaEl.textContent = meta;
+    if (r.region != null) metaEl.appendChild(regionTagElement(r.region));
+    container.appendChild(metaEl);
+  }
+  return container;
 }
 
 function matchesFilter(r) {
@@ -66,67 +133,28 @@ function matchesFilter(r) {
   return r.name.toLowerCase().includes(state.filter);
 }
 
-function detailLine(r) {
-  const parts = [];
-  if (r.facility) parts.push(r.facility + " (" + r.craftingTime + "s)");
-  const res = Object.entries(r.residues || {});
-  if (res.length) parts.push("residue " + res.map(([m, q]) => fmt(q) + " " + m).join(", "));
-  if (r.source) parts.push(capText(r));
-  if (r.energy) parts.push(fmt(r.energy) + " kJ/run");
-  if (r.regions) parts.push("[" + r.regions.map((k) => REGION_LABEL[k]).join(", ") + "]");
-  return parts.join("  |  ");
-}
-
-function ioLine(tagClass, tagText, materials) {
-  const line = document.createElement("span");
-  line.className = "detail-line";
-  const tag = document.createElement("b");
-  tag.className = "tag " + tagClass;
-  tag.textContent = tagText;
-  const text = document.createElement("span");
-  text.textContent = materials;
-  line.appendChild(tag);
-  line.appendChild(text);
-  return line;
-}
-
-function rowDetail(r) {
-  const container = document.createElement("div");
-  container.className = "recipe-detail";
-  const inText = Object.entries(r.inputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
-  if (inText) container.appendChild(ioLine("in", "IN", inText));
-  const outText = Object.entries(r.outputs).map(([m, q]) => fmt(q) + " " + m).join(", ");
-  if (outText) container.appendChild(ioLine("out", "OUT", outText));
-  const meta = detailLine(r);
-  if (meta) {
-    const metaEl = document.createElement("span");
-    metaEl.className = "detail-meta";
-    metaEl.textContent = meta;
-    container.appendChild(metaEl);
-  }
-  return container;
-}
-
-function countText(showing) {
-  const enabled = RECIPES.filter((r) => state.enabled[r.id]).length;
-  const shown = showing ? " (" + showing + " shown)" : "";
-  return enabled + " of " + RECIPES.length + " recipes enabled" + shown;
+function countText(enabledCount, total, shown) {
+  const parts = [enabledCount + " of " + total + " recipes enabled"];
+  if (shown < total) parts.push("(" + shown + " shown)");
+  return parts.join(" ");
 }
 
 function render() {
   els.list.innerHTML = "";
-  const shown = RECIPES.filter(matchesFilter);
+  const regionSet = regionRecipes();
+  const shown = regionSet.filter(matchesFilter);
   for (const r of shown) {
     const row = document.createElement("label");
-    row.className = "recipe-row" + (state.enabled[r.id] ? "" : " off");
+    row.className = "recipe-row" + (currentEnabled()[r.id] ? "" : " off");
     const cb = document.createElement("input");
     cb.type = "checkbox";
-    cb.checked = state.enabled[r.id];
+    cb.checked = currentEnabled()[r.id];
     cb.addEventListener("change", () => {
-      state.enabled[r.id] = cb.checked;
+      currentEnabled()[r.id] = cb.checked;
       row.classList.toggle("off", !cb.checked);
-      saveEnabled(state.enabled);
-      els.count.textContent = countText(shown.length);
+      saveEnabled(currentEnabled(), currentRegion());
+      const enabledCount = regionSet.filter((x) => currentEnabled()[x.id]).length;
+      els.count.textContent = countText(enabledCount, regionSet.length, shown.length);
     });
     const name = document.createElement("span");
     name.className = "recipe-name";
@@ -136,7 +164,8 @@ function render() {
     row.appendChild(rowDetail(r));
     els.list.appendChild(row);
   }
-  els.count.textContent = countText(shown.length);
+  const enabledCount = regionSet.filter((x) => currentEnabled()[x.id]).length;
+  els.count.textContent = countText(enabledCount, regionSet.length, shown.length);
 }
 
 els.search.addEventListener("input", () => {
@@ -149,5 +178,6 @@ els.facility.addEventListener("change", () => {
   render();
 });
 
+initRegionUI(els.region, () => render());
 initFacilityOptions();
 render();

@@ -9,8 +9,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiran-Cuprium Part": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "component_activity_xiranite_cmpt_1",
@@ -22,8 +21,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Xiranite Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "component_activity_xiranite_enr_cmpt_1",
@@ -35,8 +33,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Heavy Xiranite Part": 2
-    },
-    "energy": 400
+    }
   },
   {
     "id": "component_copper_cmpt_1",
@@ -48,8 +45,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "component_copper_enr_cmpt_1",
@@ -61,8 +57,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Part": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "component_copper_enr2_cmpt_1",
@@ -74,8 +69,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Pyrrolite Part": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "component_glass_cmpt_1",
@@ -87,8 +81,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "component_glass_enr_cmpt_1",
@@ -100,8 +93,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "component_iron_cmpt_1",
@@ -113,8 +105,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "component_iron_enr_cmpt_1",
@@ -126,8 +117,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Part": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_acid_1",
@@ -140,8 +130,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_copper_1",
@@ -154,8 +143,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_copper_enr_1",
@@ -168,8 +156,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_grass_1_1",
@@ -182,8 +169,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_grass_2_1",
@@ -196,8 +182,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_sewage_1",
@@ -210,8 +195,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_water_1",
@@ -224,8 +208,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_xiranite_1",
@@ -238,8 +221,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_xiranite_enr_1",
@@ -252,8 +234,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_xiranite_lowpoly_1",
@@ -266,8 +247,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copper_xiranite_poly_1",
@@ -280,8 +260,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_acid_1",
@@ -294,8 +273,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_copper_1",
@@ -308,8 +286,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_copper_enr_1",
@@ -322,8 +299,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_grass_1_1",
@@ -336,8 +312,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_grass_2_1",
@@ -350,8 +325,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_sewage_1",
@@ -364,8 +338,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_water_1",
@@ -378,8 +351,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_xiranite_1",
@@ -392,8 +364,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_xiranite_enr_1",
@@ -406,8 +377,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_xiranite_lowpoly_1",
@@ -420,8 +390,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperenr_xiranite_poly_1",
@@ -434,8 +403,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_acid_1",
@@ -448,8 +416,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Acridgen": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_copper_1",
@@ -462,8 +429,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Cuprium Gas": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_copper_enr_1",
@@ -476,8 +442,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Hetonite Gas": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_copper_enr2_1",
@@ -490,8 +455,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Pyrrolite Gas": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_inert_1",
@@ -504,8 +468,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Inergen": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_water_1",
@@ -518,8 +481,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Aquagen": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_xiranite_1",
@@ -532,8 +494,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Xiragen": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_copperjar_gas_xiranite_enr_1",
@@ -546,8 +507,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Canister": 1,
       "Heavy Xiragen": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_acid_1",
@@ -560,8 +520,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_copper_1",
@@ -574,8 +533,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_copper_enr_1",
@@ -588,8 +546,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_grass_1_1",
@@ -602,8 +559,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_grass_2_1",
@@ -616,8 +572,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_sewage_1",
@@ -630,8 +585,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_water_1",
@@ -644,8 +598,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_xiranite_1",
@@ -658,8 +611,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_xiranite_enr_1",
@@ -672,8 +624,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_xiranite_lowpoly_1",
@@ -686,8 +637,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glass_xiranite_poly_1",
@@ -700,8 +650,7 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_acid_1",
@@ -714,8 +663,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_copper_1",
@@ -728,8 +676,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_copper_enr_1",
@@ -742,8 +689,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_grass_1_1",
@@ -756,8 +702,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_grass_2_1",
@@ -770,8 +715,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_sewage_1",
@@ -784,8 +728,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_water_1",
@@ -798,8 +741,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_xiranite_1",
@@ -812,8 +754,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_xiranite_enr_1",
@@ -826,8 +767,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_xiranite_lowpoly_1",
@@ -840,8 +780,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_glassenr_xiranite_poly_1",
@@ -854,8 +793,7 @@ export const RECIPES = [
     "outputs": {
       "Cryston Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_acid_1",
@@ -868,8 +806,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_copper_1",
@@ -882,8 +819,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_copper_enr_1",
@@ -896,8 +832,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_grass_1_1",
@@ -910,8 +845,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_grass_2_1",
@@ -924,8 +858,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_sewage_1",
@@ -938,8 +871,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_water_1",
@@ -952,8 +884,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_xiranite_1",
@@ -966,8 +897,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_xiranite_enr_1",
@@ -980,8 +910,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_xiranite_lowpoly_1",
@@ -994,8 +923,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_iron_xiranite_poly_1",
@@ -1008,8 +936,7 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_acid_1",
@@ -1022,8 +949,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_copper_1",
@@ -1036,8 +962,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Cuprium Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_copper_enr_1",
@@ -1050,8 +975,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Hetonite Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_grass_1_1",
@@ -1064,8 +988,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Jincao Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_grass_2_1",
@@ -1078,8 +1001,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Yazhen Solution": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_sewage_1",
@@ -1092,8 +1014,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Sewage": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_water_1",
@@ -1106,8 +1027,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Clean Water": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_xiranite_1",
@@ -1120,8 +1040,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Liquid Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_xiranite_enr_1",
@@ -1134,8 +1053,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_xiranite_lowpoly_1",
@@ -1148,8 +1066,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_ironenr_xiranite_poly_1",
@@ -1162,8 +1079,7 @@ export const RECIPES = [
     "outputs": {
       "Steel Bottle": 1,
       "Xircon Effluent": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "dismantler_xiranenr_grass_2_1",
@@ -1176,8 +1092,7 @@ export const RECIPES = [
     "outputs": {
       "Experimental Heavy Xiranite Bottle": 1,
       "Yazhen Solution": 5
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_copper_acid",
@@ -1190,8 +1105,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_copper",
@@ -1204,8 +1118,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_copper_enr",
@@ -1218,8 +1131,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_grass_1",
@@ -1232,8 +1144,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_grass_2",
@@ -1246,8 +1157,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_sewage",
@@ -1260,8 +1170,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_water",
@@ -1274,8 +1183,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_xiranite",
@@ -1288,8 +1196,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_xiranite_enr",
@@ -1302,8 +1209,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_xiranite_lowpoly",
@@ -1316,8 +1222,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copper_xiranite_poly",
@@ -1330,8 +1235,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_acid",
@@ -1344,8 +1248,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_copper",
@@ -1358,8 +1261,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_copper_enr",
@@ -1372,8 +1274,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_grass_1",
@@ -1386,8 +1287,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_grass_2",
@@ -1400,8 +1300,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_sewage",
@@ -1414,8 +1313,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_water",
@@ -1428,8 +1326,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_xiranite",
@@ -1442,8 +1339,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_xiranite_enr",
@@ -1456,8 +1352,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_xiranite_lowpoly",
@@ -1470,8 +1365,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_copperenr_xiranite_poly",
@@ -1484,8 +1378,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_food_1_1",
@@ -1498,8 +1391,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Canned Citrome [C]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_food_2_1",
@@ -1512,8 +1404,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Canned Citrome [B]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_food_3_1",
@@ -1526,8 +1417,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Canned Citrome [A]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_glass_acid",
@@ -1540,8 +1430,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_copper",
@@ -1554,8 +1443,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_copper_enr",
@@ -1568,8 +1456,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_grass_1",
@@ -1582,8 +1469,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_grass_2",
@@ -1596,8 +1482,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_sewage",
@@ -1610,8 +1495,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_water",
@@ -1624,8 +1508,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_xiranite",
@@ -1638,8 +1521,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_xiranite_enr",
@@ -1652,8 +1534,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_xiranite_lowpoly",
@@ -1666,8 +1547,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glass_xiranite_poly",
@@ -1680,8 +1560,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_acid",
@@ -1694,8 +1573,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_copper",
@@ -1708,8 +1586,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_copper_enr",
@@ -1722,8 +1599,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_grass_1",
@@ -1736,8 +1612,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_grass_2",
@@ -1750,8 +1625,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_sewage",
@@ -1764,8 +1638,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_water",
@@ -1778,8 +1651,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_xiranite",
@@ -1792,8 +1664,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_xiranite_enr",
@@ -1806,8 +1677,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_xiranite_lowpoly",
@@ -1820,8 +1690,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_glassenr_xiranite_poly",
@@ -1834,8 +1703,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_acid",
@@ -1848,8 +1716,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_copper",
@@ -1862,8 +1729,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_copper_enr",
@@ -1876,8 +1742,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_grass_1",
@@ -1890,8 +1755,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_grass_2",
@@ -1904,8 +1768,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_sewage",
@@ -1918,8 +1781,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_water",
@@ -1932,8 +1794,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_xiranite",
@@ -1946,8 +1807,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_xiranite_enr",
@@ -1960,8 +1820,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_xiranite_lowpoly",
@@ -1974,8 +1833,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_iron_xiranite_poly",
@@ -1988,8 +1846,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_acid",
@@ -2002,8 +1859,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Precipitation Acid)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_copper",
@@ -2016,8 +1872,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Cuprium Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_copper_enr",
@@ -2030,8 +1885,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Hetonite Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_grass_1",
@@ -2044,8 +1898,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Jincao Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_grass_2",
@@ -2058,8 +1911,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Yazhen Solution)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_sewage",
@@ -2072,8 +1924,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Sewage)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_water",
@@ -2086,8 +1937,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Clean Water)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_xiranite",
@@ -2100,8 +1950,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Liquid Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_xiranite_enr",
@@ -2114,8 +1963,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Liquid Heavy Xiranite)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_xiranite_lowpoly",
@@ -2128,8 +1976,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Inert Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_ironenr_xiranite_poly",
@@ -2142,8 +1989,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle (Xircon Effluent)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_bottled_rec_hp_1_1",
@@ -2156,8 +2002,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buck Capsule [C]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_rec_hp_2_1",
@@ -2170,8 +2015,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buck Capsule [B]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_rec_hp_3_1",
@@ -2184,8 +2028,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buck Capsule [A]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_bottled_xiranenr_grass_2",
@@ -2198,8 +2041,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Heavy Xiranite Bottle (Yazhen Solution)": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "filling_copperjar_copper_enr2_1",
@@ -2212,8 +2054,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Pyrrolite Gas)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_acid_1",
@@ -2226,8 +2067,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Acridgen)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_copper_1",
@@ -2240,8 +2080,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Cuprium Gas)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_copper_enr_1",
@@ -2254,8 +2093,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Hetonite Gas)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_inert_1",
@@ -2268,8 +2106,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Inergen)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_water_1",
@@ -2282,8 +2119,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Aquagen)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_xiranite_1",
@@ -2296,8 +2132,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Xiragen)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "filling_copperjar_gas_xiranite_enr_1",
@@ -2310,8 +2145,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister (Heavy Xiragen)": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "fluid_consume_liquid_cleaner_1_item_liquid_sewage",
@@ -2321,8 +2155,7 @@ export const RECIPES = [
     "inputs": {
       "Sewage": 1
     },
-    "outputs": {},
-    "energy": 100
+    "outputs": {}
   },
   {
     "id": "fluid_consume_liquid_cleaner_1_item_liquid_xiranite_lowpoly",
@@ -2332,8 +2165,7 @@ export const RECIPES = [
     "inputs": {
       "Inert Xircon Effluent": 1
     },
-    "outputs": {},
-    "energy": 100
+    "outputs": {}
   },
   {
     "id": "fluid_consume_liquid_cleaner_1_item_liquid_xiranite_poly",
@@ -2343,8 +2175,7 @@ export const RECIPES = [
     "inputs": {
       "Xircon Effluent": 1
     },
-    "outputs": {},
-    "energy": 100
+    "outputs": {}
   },
   {
     "id": "furnance_activity_xiranite_enr_nugget_1",
@@ -2356,8 +2187,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Heavy Xiranite": 1
-    },
-    "energy": 50
+    }
   },
   {
     "id": "furnance_activity_xiranite_nugget_1",
@@ -2369,8 +2199,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiranite": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_enr_1",
@@ -2382,8 +2211,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Stabilized Carbon": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_enr_powder_1",
@@ -2395,8 +2223,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Carbon Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_enr_powder_2",
@@ -2408,8 +2235,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Carbon Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_1",
@@ -2421,8 +2247,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_2",
@@ -2434,8 +2259,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_3",
@@ -2447,8 +2271,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_4",
@@ -2460,8 +2283,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_5",
@@ -2473,8 +2295,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_material_6",
@@ -2486,8 +2307,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_powder_1",
@@ -2499,8 +2319,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_powder_2",
@@ -2512,8 +2331,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_powder_3",
@@ -2525,8 +2343,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_powder_4",
@@ -2538,8 +2355,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_carbon_powder_5",
@@ -2551,8 +2367,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_copper_nugget_1",
@@ -2566,8 +2381,7 @@ export const RECIPES = [
     "outputs": {
       "Cuprium": 1,
       "Sewage": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_crystal_enr_1",
@@ -2579,8 +2393,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Packed Origocrust": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_crystal_enr_powder_1",
@@ -2592,8 +2405,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Origocrust Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_crystal_powder_1",
@@ -2605,8 +2417,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Origocrust Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_crystal_shell_1",
@@ -2618,8 +2429,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Origocrust": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_crystal_shell_2",
@@ -2631,8 +2441,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Origocrust": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_iron_enr_1",
@@ -2644,8 +2453,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_iron_nugget_1",
@@ -2657,8 +2465,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_iron_nugget_2",
@@ -2670,8 +2477,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_quartz_enr_1",
@@ -2683,8 +2489,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Fiber": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_quartz_glass_1",
@@ -2696,8 +2501,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Fiber": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "furnance_quartz_glass_2",
@@ -2709,8 +2513,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Fiber": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "gas_reactor_activity_copper_poly_gas_1",
@@ -2723,8 +2526,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiran-Cuprium Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "gas_reactor_gas_copper_enr2_1",
@@ -2737,8 +2539,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Pyrrolite Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "grinder_carbon_powder_1",
@@ -2750,8 +2551,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Carbon Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_copper_powder_1",
@@ -2763,8 +2563,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_crystal_powder_1",
@@ -2776,8 +2575,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Origocrust Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_iron_powder_1",
@@ -2789,8 +2587,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_originium_powder_1",
@@ -2802,8 +2599,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Originium Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_bbflower_powder_1_1",
@@ -2815,8 +2611,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Aketine Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_grass_powder_1_1",
@@ -2828,8 +2623,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_grass_powder_2_1",
@@ -2841,8 +2635,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_moss_powder_1_1",
@@ -2854,8 +2647,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buckflower Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_moss_powder_2_1",
@@ -2867,8 +2659,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Citrome Powder": 2
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_plant_moss_powder_3_1",
@@ -2880,8 +2671,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Sandleaf Powder": 3
-    },
-    "energy": 10
+    }
   },
   {
     "id": "grinder_quartz_powder_1",
@@ -2893,8 +2683,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Powder": 1
-    },
-    "energy": 10
+    }
   },
   {
     "id": "liquid_purifier_copper_enr_1",
@@ -2907,8 +2696,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite Solution": 1,
       "Precipitation Acid": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_purifier_gas_copper_enr_1",
@@ -2921,8 +2709,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Gas": 2
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_purifier_gas_copper_enr_2",
@@ -2935,8 +2722,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Gas": 2
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_purifier_gas_xiranite_enr_1",
@@ -2949,8 +2735,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiragen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_purifier_gas_xiranite_enr_2",
@@ -2963,8 +2748,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiragen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_purifier_xiranite_poly_1",
@@ -2977,8 +2761,7 @@ export const RECIPES = [
     "outputs": {
       "Xircon Effluent": 1,
       "Clean Water": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_acid_1",
@@ -2990,8 +2773,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Acridgen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_copper_1",
@@ -3003,8 +2785,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_copper_enr_1",
@@ -3016,8 +2797,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_water_1",
@@ -3029,8 +2809,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Aquagen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_xiranite_1",
@@ -3042,8 +2821,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiragen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_gas_gas_xiranite_enr_1",
@@ -3055,8 +2833,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiragen": 5
-    },
-    "energy": 500
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_acid_1",
@@ -3068,8 +2845,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Precipitation Acid": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_copper_1",
@@ -3081,8 +2857,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Solution": 2
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_copper_enr_1",
@@ -3094,8 +2869,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Solution": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_water_1",
@@ -3107,8 +2881,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Clean Water": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_xiranite_1",
@@ -3120,8 +2893,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_1_liquid_liquid_xiranite_enr_1",
@@ -3133,8 +2905,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Heavy Xiranite": 2
-    },
-    "energy": 500
+    }
   },
   {
     "id": "liquid_transmuter_2_activity_copper_poly_1",
@@ -3146,8 +2917,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiran-Cuprium": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_activity_copper_poly_gas_1",
@@ -3159,8 +2929,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiran-Cuprium Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_gas_gas_copper_1",
@@ -3172,8 +2941,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_gas_gas_copper_enr_1",
@@ -3185,8 +2953,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Gas": 2
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_gas_gas_copper_enr2_1",
@@ -3198,8 +2965,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Pyrrolite Gas": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_gas_gas_xiranite_1",
@@ -3211,8 +2977,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiragen": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_gas_gas_xiranite_enr_1",
@@ -3224,8 +2989,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiragen": 5
-    },
-    "energy": 500
+    }
   },
   {
     "id": "liquid_transmuter_2_solid_copper_enr_1",
@@ -3237,8 +3001,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_solid_copper_enr2_1",
@@ -3250,8 +3013,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Pyrrolite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_solid_copper_nugget_1",
@@ -3263,8 +3025,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium": 2
-    },
-    "energy": 100
+    }
   },
   {
     "id": "liquid_transmuter_2_solid_xiranite_enr_powder_1",
@@ -3276,8 +3037,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiranite": 2
-    },
-    "energy": 500
+    }
   },
   {
     "id": "liquid_transmuter_2_solid_xiranite_powder_1",
@@ -3289,8 +3049,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "planter_plant_bbflower_1",
@@ -3302,8 +3061,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Aketine": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "planter_plant_grass_1_1",
@@ -3316,8 +3074,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao": 2
-    },
-    "energy": 40
+    }
   },
   {
     "id": "planter_plant_grass_2_1",
@@ -3330,8 +3087,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen": 2
-    },
-    "energy": 40
+    }
   },
   {
     "id": "planter_plant_moss_1_1",
@@ -3343,8 +3099,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buckflower": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "planter_plant_moss_2_1",
@@ -3356,8 +3111,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Citrome": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "planter_plant_moss_3_1",
@@ -3369,8 +3123,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Sandleaf": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "pool_copper_enr_1",
@@ -3384,8 +3137,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite": 1,
       "Sewage": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_copper_enr_2",
@@ -3399,8 +3151,7 @@ export const RECIPES = [
     "outputs": {
       "Hetonite": 1,
       "Sewage": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_copper_1",
@@ -3413,8 +3164,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Solution": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_copper_2",
@@ -3427,8 +3177,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Solution": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_liquid_xiranite_1",
@@ -3441,8 +3190,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_liquid_xiranite_2",
@@ -3455,8 +3203,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Xiranite": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_plant_grass_1_1",
@@ -3469,8 +3216,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Solution": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_plant_grass_1_2",
@@ -3483,8 +3229,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Solution": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_plant_grass_2_1",
@@ -3497,8 +3242,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Solution": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_plant_grass_2_2",
@@ -3511,8 +3255,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Solution": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_xiranite_enr_1",
@@ -3525,8 +3268,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_xiranite_enr_2",
@@ -3539,8 +3281,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Liquid Heavy Xiranite": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_liquid_xiranite_poly_1",
@@ -3554,8 +3295,7 @@ export const RECIPES = [
     "outputs": {
       "Xircon Effluent": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_liquid_xiranite_poly_2",
@@ -3569,8 +3309,7 @@ export const RECIPES = [
     "outputs": {
       "Xircon Effluent": 1,
       "Inert Xircon Effluent": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "pool_xiranite_poly_1",
@@ -3584,8 +3323,7 @@ export const RECIPES = [
     "outputs": {
       "Xircon": 1,
       "Sewage": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "pool_xiranite_poly_2",
@@ -3599,8 +3337,7 @@ export const RECIPES = [
     "outputs": {
       "Xircon": 1,
       "Sewage": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "seedcollector_plant_bbflower_1",
@@ -3612,8 +3349,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Aketine Seed": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_grass_1_1",
@@ -3625,8 +3361,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Seed": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_grass_2_1",
@@ -3638,8 +3373,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Seeds": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_moss_1_1",
@@ -3651,8 +3385,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Buckflower Seed": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_moss_2_1",
@@ -3664,8 +3397,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Citrome Seed": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_moss_3_1",
@@ -3677,8 +3409,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Sandleaf Seed": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_sp_1",
@@ -3690,8 +3421,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Reed Rye Seeds": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_sp_2",
@@ -3703,8 +3433,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Tartpepper Seeds": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_sp_3",
@@ -3716,8 +3445,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Redjade Ginseng Seeds": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "seedcollector_plant_sp_4",
@@ -3729,8 +3457,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amber Rice Seeds": 2
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_activity_xiranite_bottle_1",
@@ -3742,8 +3469,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Xiranite Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_activity_xiranite_box_1",
@@ -3755,8 +3481,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Chubby Lung Shell": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_activity_xiranite_enr_bottle_1",
@@ -3768,8 +3493,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Heavy Xiranite Bottle": 2
-    },
-    "energy": 200
+    }
   },
   {
     "id": "shaper_copper_bottle_1",
@@ -3781,8 +3505,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_copper_enr_bottle_1",
@@ -3794,8 +3517,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_gas_activity_xiranite_enr_box_1",
@@ -3808,8 +3530,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Chubby Lung Heavy Shell": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "shaper_gas_copper_jar_1",
@@ -3822,8 +3543,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Canister": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_glass_bottle_1",
@@ -3835,8 +3555,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_glass_enr_bottle_1",
@@ -3848,8 +3567,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_iron_bottle_1",
@@ -3861,8 +3579,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "shaper_iron_enr_bottle_1",
@@ -3874,8 +3591,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Steel Bottle": 1
-    },
-    "energy": 20
+    }
   },
   {
     "id": "thickener_carbon_enr_powder_1",
@@ -3888,8 +3604,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Carbon Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_crystal_enr_powder_1",
@@ -3902,8 +3617,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Origocrust Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_iron_enr_powder_1",
@@ -3916,8 +3630,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Ferrium Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_originium_enr_powder_1",
@@ -3930,8 +3643,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Dense Originium Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_plant_moss_enr_powder_1_1",
@@ -3944,8 +3656,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ground Buckflower Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_plant_moss_enr_powder_2_1",
@@ -3958,8 +3669,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ground Citrome Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "thickener_quartz_enr_powder_1",
@@ -3972,8 +3682,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Powder": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "tools_proc_activity_copper_poly_tool_1",
@@ -3986,8 +3695,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Xiran-Cuprium Frame": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_copper_tool_1",
@@ -4000,8 +3708,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Proto Cuprium Frame": 1
-    },
-    "energy": 40
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_enr_hulu_1",
@@ -4014,8 +3721,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite Jade Gourd": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_enr_lung",
@@ -4028,8 +3734,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiranite Chubby Lung": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_enr_tool_1",
@@ -4042,8 +3747,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Experimental Xiran-Hue Atomizer": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_hulu_1",
@@ -4056,8 +3760,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite Gourd": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_activity_xiranite_lung",
@@ -4070,8 +3773,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite Chubby Lung": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_battery_1_1",
@@ -4084,8 +3786,7 @@ export const RECIPES = [
     },
     "outputs": {
       "LC Valley Battery": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_battery_2_1",
@@ -4098,8 +3799,7 @@ export const RECIPES = [
     },
     "outputs": {
       "SC Valley Battery": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_battery_3_1",
@@ -4112,8 +3812,7 @@ export const RECIPES = [
     },
     "outputs": {
       "HC Valley Battery": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_battery_4_1",
@@ -4126,8 +3825,7 @@ export const RECIPES = [
     },
     "outputs": {
       "LC Wuling Battery": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_battery_5_1",
@@ -4140,8 +3838,7 @@ export const RECIPES = [
     },
     "outputs": {
       "SC Wuling Battery": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_bomb_1_1",
@@ -4154,8 +3851,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Industrial Explosive": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_filter_core_2",
@@ -4168,8 +3864,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Separator Core": 2
-    },
-    "energy": 40
+    }
   },
   {
     "id": "tools_proc_food_4_1",
@@ -4182,8 +3877,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Drink": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_food_5_1",
@@ -4196,8 +3890,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Jincao Tea": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_rec_hp_4_1",
@@ -4210,8 +3903,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Syringe [C]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "tools_proc_rec_hp_5_1",
@@ -4224,8 +3916,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Yazhen Syringe [A]": 1
-    },
-    "energy": 200
+    }
   },
   {
     "id": "winder_equip_script_1",
@@ -4238,8 +3929,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Amethyst Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_2",
@@ -4252,8 +3942,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Ferrium Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_3",
@@ -4266,8 +3955,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cryston Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_4",
@@ -4280,8 +3968,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_4_1",
@@ -4294,8 +3981,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Cuprium Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_4_2",
@@ -4308,8 +3994,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Hetonite Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "winder_equip_script_4_3",
@@ -4322,8 +4007,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Pyrrolite Component": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "xiranite_oven_muck_xiranite_1",
@@ -4336,8 +4020,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Bumper-Rich": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "xiranite_oven_xiranite_enr_powder_1",
@@ -4350,8 +4033,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Heavy Xiranite": 1
-    },
-    "energy": 500
+    }
   },
   {
     "id": "xiranite_oven_xiranite_powder_1",
@@ -4364,8 +4046,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "xiranite_oven_xiranite_powder_2",
@@ -4378,8 +4059,7 @@ export const RECIPES = [
     },
     "outputs": {
       "Xiranite": 1
-    },
-    "energy": 100
+    }
   },
   {
     "id": "source_originium_ore",
@@ -4388,26 +4068,20 @@ export const RECIPES = [
     "outputs": {
       "Originium Ore": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "valley_4": {
+      "1": {
         "hp": 28,
         "lp": 0
       },
-      "wuling": {
+      "2": {
         "hp": 22,
         "lp": 10
       }
-    }
+    },
+    "region": 0
   },
   {
     "id": "source_quartz_sand",
@@ -4416,25 +4090,16 @@ export const RECIPES = [
     "outputs": {
       "Amethyst Ore": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "valley_4": {
+      "1": {
         "hp": 12,
         "lp": 0
       }
     },
-    "regions": [
-      "valley_4"
-    ]
+    "region": 1
   },
   {
     "id": "source_iron_ore",
@@ -4443,26 +4108,20 @@ export const RECIPES = [
     "outputs": {
       "Ferrium Ore": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "valley_4": {
+      "1": {
         "hp": 54,
         "lp": 0
       },
-      "wuling": {
+      "2": {
         "hp": 6,
         "lp": 0
       }
-    }
+    },
+    "region": 0
   },
   {
     "id": "source_copper_ore",
@@ -4471,25 +4130,16 @@ export const RECIPES = [
     "outputs": {
       "Cuprium Ore": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "wuling": {
+      "2": {
         "hp": 21,
         "lp": 0
       }
     },
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   },
   {
     "id": "source_liquid_water",
@@ -4498,21 +4148,9 @@ export const RECIPES = [
     "outputs": {
       "Clean Water": 1
     },
-    "energy": 10,
     "source": true,
-    "nodes": {
-      "node": {
-        "rate": 60
-      }
-    },
-    "defaults": {
-      "valley_4": {
-        "node": 10
-      },
-      "wuling": {
-        "node": 10
-      }
-    }
+    "rate": 60,
+    "region": 0
   },
   {
     "id": "source_liquid_acid",
@@ -4521,21 +4159,9 @@ export const RECIPES = [
     "outputs": {
       "Precipitation Acid": 1
     },
-    "energy": 20,
     "source": true,
-    "nodes": {
-      "node": {
-        "rate": 60
-      }
-    },
-    "defaults": {
-      "wuling": {
-        "node": 10
-      }
-    },
-    "regions": [
-      "wuling"
-    ]
+    "rate": 60,
+    "region": 2
   },
   {
     "id": "source_gas_inert",
@@ -4544,25 +4170,16 @@ export const RECIPES = [
     "outputs": {
       "Inergen": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "wuling": {
+      "2": {
         "hp": 23,
         "lp": 0
       }
     },
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   },
   {
     "id": "source_gas_xiranite",
@@ -4571,25 +4188,16 @@ export const RECIPES = [
     "outputs": {
       "Xiragen": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "hp": {
-        "rate": 20
-      },
-      "lp": {
-        "rate": 10
-      }
-    },
+    "rate": 10,
+    "highPurity": true,
     "defaults": {
-      "wuling": {
+      "2": {
         "hp": 5,
         "lp": 0
       }
     },
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   },
   {
     "id": "source_muck",
@@ -4598,21 +4206,14 @@ export const RECIPES = [
     "outputs": {
       "Burdo-Muck": 1
     },
-    "energy": 0,
     "source": true,
-    "nodes": {
-      "node": {
-        "rate": 30
-      }
-    },
+    "rate": 30,
     "defaults": {
-      "wuling": {
+      "2": {
         "node": 10
       }
     },
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   },
   {
     "id": "burn_item_proc_battery_1",
@@ -4625,10 +4226,7 @@ export const RECIPES = [
     "outputs": {
       "Energy": 8800
     },
-    "energy": 0,
-    "regions": [
-      "valley_4"
-    ]
+    "region": 1
   },
   {
     "id": "burn_item_proc_battery_2",
@@ -4641,10 +4239,7 @@ export const RECIPES = [
     "outputs": {
       "Energy": 16800
     },
-    "energy": 0,
-    "regions": [
-      "valley_4"
-    ]
+    "region": 1
   },
   {
     "id": "burn_item_proc_battery_3",
@@ -4657,10 +4252,7 @@ export const RECIPES = [
     "outputs": {
       "Energy": 44000
     },
-    "energy": 0,
-    "regions": [
-      "valley_4"
-    ]
+    "region": 1
   },
   {
     "id": "burn_item_proc_battery_4",
@@ -4673,10 +4265,7 @@ export const RECIPES = [
     "outputs": {
       "Energy": 64000
     },
-    "energy": 0,
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   },
   {
     "id": "burn_item_proc_battery_5",
@@ -4689,9 +4278,6 @@ export const RECIPES = [
     "outputs": {
       "Energy": 128000
     },
-    "energy": 0,
-    "regions": [
-      "wuling"
-    ]
+    "region": 2
   }
 ];

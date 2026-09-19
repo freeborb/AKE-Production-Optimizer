@@ -10,7 +10,11 @@ function regionRecipes(region) {
 
 function defaultAvailability(recipes, region) {
   const map = {};
-  for (const r of recipes) if (r.source) map[r.id] = sourceTotal(r, region);
+  for (const r of recipes) {
+    if (!r.source) continue;
+    const t = sourceTotal(r, region);
+    if (t > 0) map[r.id] = t;
+  }
   return map;
 }
 
@@ -41,10 +45,10 @@ function solve(recipes, opts) {
 }
 
 for (const [region, target] of [
-  ["valley_4", "Ferrium"],
-  ["valley_4", "Steel"],
-  ["wuling", "Ferrium"],
-  ["wuling", "Steel"]
+  [1, "Ferrium"],
+  [1, "Steel"],
+  [2, "Ferrium"],
+  [2, "Steel"]
 ]) {
   const recipes = regionRecipes(region);
   const result = solve(recipes, { mode: "maximize", target, region, availability: defaultAvailability(recipes, region) });
@@ -56,7 +60,7 @@ for (const [region, target] of [
   printPlan(region + " -> " + target, recipes, null, result);
 }
 
-const region = "valley_4";
+const region = 1;
 const recipes = regionRecipes(region);
 const result = solve(recipes, {
   mode: "minimize",

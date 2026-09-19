@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recipes - AKE Production Optimizer</title>
+  <title>Facilities - AKE Production Optimizer</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -14,28 +14,23 @@
     <nav class="nav">
       <select id="region" class="region-select" aria-label="Region"></select>
       <a href="index.html">Calculator</a>
-      <a class="active" href="recipes.html">Recipes</a>
+      <a href="recipes.html">Recipes</a>
       <a href="resources.html">Resources</a>
-      <a href="facilities.html">Facilities</a>
+      <a class="active" href="facilities.html">Facilities</a>
     </nav>
   </header>
 
   <main class="full">
     <section class="panel">
-      <h2>All recipes</h2>
-      <p class="muted" id="enabled-count"></p>
+      <h2>Facilities</h2>
+      <p class="muted" id="facility-count"></p>
       <div class="filters">
-        <input id="search" type="search" placeholder="Filter recipes by name..." />
-        <select id="facility"></select>
+        <input id="search" type="search" placeholder="Filter facilities or recipes by name..." />
       </div>
-      <div id="recipe-list" class="stack"></div>
+      <div id="facility-list" class="stack"></div>
     </section>
   </main>
 
-  <footer class="muted">
-    Toggle recipes on or off; the Calculator only includes enabled recipes. Recipes live in <code>data/recipes.js</code>.
-  </footer>
-
-  <script type="module" src="recipes.js"></script>
+  <script type="module" src="facilities.js"></script>
 </body>
 </html>

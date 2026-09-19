@@ -3,16 +3,19 @@ export function varName(id) {
 }
 
 export function validInRegion(r, region) {
-  if (!r.regions) return true;
-  return !!region && r.regions.includes(region);
+  if (!r.region || r.region === 0) return true;
+  return r.region === region;
 }
 
 export function nodeQualities(r) {
-  return r.nodes ? Object.keys(r.nodes) : [];
+  if (!r.source) return [];
+  return r.highPurity ? ["hp", "lp"] : ["node"];
 }
 
 export function nodeRate(r, q) {
-  return r.nodes?.[q]?.rate ?? 0;
+  if (!r.source) return 0;
+  if (q === "hp") return (r.rate ?? 0) * 2;
+  return r.rate ?? 0;
 }
 
 export function sourceTotal(r, region, counts) {
@@ -23,6 +26,16 @@ export function sourceTotal(r, region, counts) {
     total += n * nodeRate(r, q);
   }
   return total;
+}
+
+export function sourceUnlimited(r, region) {
+  if (!r.source) return false;
+  const counts = r.defaults?.[region];
+  if (!counts) return true;
+  for (const q of nodeQualities(r)) {
+    if ((counts[q] ?? 0) > 0) return false;
+  }
+  return true;
 }
 
 function fmt(n) {
@@ -42,7 +55,6 @@ export function collectMaterials(recipes) {
     for (const m in r.outputs) set.add(m);
     for (const m in r.residues || {}) set.add(m);
   }
-  set.add("Energy");
   return [...set].sort();
 }
 
@@ -53,7 +65,6 @@ function balanceCoeffs(recipes) {
     const v = varName(r.id);
     const coeff = new Map();
     for (const [m, q] of Object.entries(r.inputs)) coeff.set(m, (coeff.get(m) || 0) - q);
-    if (r.energy) coeff.set("Energy", (coeff.get("Energy") || 0) - r.energy);
     for (const [m, q] of Object.entries(r.outputs)) coeff.set(m, (coeff.get(m) || 0) + q);
     for (const [m, q] of Object.entries(r.residues || {})) coeff.set(m, (coeff.get(m) || 0) + q);
     for (const [m, c] of coeff) if (c !== 0) rows.get(m).push([v, c]);
@@ -112,7 +123,6 @@ export function computeBalances(recipes, rates) {
   for (const r of recipes) {
     const rate = rates[r.id] || 0;
     for (const [m, q] of Object.entries(r.inputs)) res.get(m).used += q * rate;
-    if (r.energy) res.get("Energy").used += r.energy * rate;
     for (const [m, q] of Object.entries(r.outputs)) res.get(m).made += q * rate;
     for (const [m, q] of Object.entries(r.residues || {})) res.get(m).made += q * rate;
   }
