@@ -1,5 +1,8 @@
-import { RECIPES } from "./data/recipes.js";
+import { RECIPES as BASE_RECIPES, FACILITIES } from "./data/recipes.js";
+import { mergeCustomRecipes } from "./custom-recipes.js";
 import { regionTagElement, initRegionUI } from "./region.js";
+
+const RECIPES = mergeCustomRecipes(BASE_RECIPES);
 
 const els = {
   region: document.getElementById("region"),
@@ -74,11 +77,21 @@ function render() {
     const details = document.createElement("details");
     details.className = "facility";
     const summary = document.createElement("summary");
-    summary.textContent = facility;
+    const line = document.createElement("span");
+    line.className = "facility-line";
+    line.textContent = facility;
     const count = document.createElement("span");
     count.className = "muted";
     count.textContent = " (" + vis.length + " recipes)";
-    summary.appendChild(count);
+    line.appendChild(count);
+    summary.appendChild(line);
+    const kw = FACILITIES[facility];
+    if (kw != null) {
+      const kwEl = document.createElement("span");
+      kwEl.className = "facility-kw";
+      kwEl.textContent = kw + " kW";
+      summary.appendChild(kwEl);
+    }
     details.appendChild(summary);
     const list = document.createElement("div");
     list.className = "stack";

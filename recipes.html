@@ -27,7 +27,46 @@
       <div class="filters">
         <input id="search" type="search" placeholder="Filter recipes by name..." />
         <select id="facility"></select>
+        <button id="add-recipe" class="btn-add" title="Add a custom recipe" aria-label="Add recipe">+</button>
       </div>
+
+      <section id="add-panel" class="panel" hidden>
+        <h2>Add recipe</h2>
+        <div class="add-grid">
+          <label class="field-grid">
+            <span>Name</span>
+            <input id="custom-name" type="text" placeholder="e.g. My Custom Part" />
+          </label>
+          <label class="field-grid">
+            <span>Facility</span>
+            <input id="custom-facility" type="text" list="facility-suggest" placeholder="e.g. Fitting Unit" />
+          </label>
+          <datalist id="facility-suggest"></datalist>
+          <label class="field-grid">
+            <span>Crafting time (s)</span>
+            <input id="custom-time" type="number" min="0.1" step="any" value="1" />
+          </label>
+          <label class="field-grid">
+            <span>Region</span>
+            <select id="custom-region"></select>
+          </label>
+        </div>
+
+        <h3 class="mini-head">Inputs</h3>
+        <div id="custom-inputs" class="io-rows"></div>
+        <button id="add-in-row" class="btn-mini">+ input</button>
+
+        <h3 class="mini-head">Outputs</h3>
+        <div id="custom-outputs" class="io-rows"></div>
+        <button id="add-out-row" class="btn-mini">+ output</button>
+
+        <div class="add-actions">
+          <span id="add-error" class="add-error"></span>
+          <button id="btn-cancel-add" class="btn-mini">Cancel</button>
+          <button id="btn-confirm-add" class="btn-confirm">Add recipe</button>
+        </div>
+      </section>
+
       <div id="recipe-list" class="stack"></div>
     </section>
   </main>

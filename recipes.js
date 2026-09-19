@@ -1,7 +1,12 @@
-import { RECIPES } from "./data/recipes.js";
+import { RECIPES as BASE_RECIPES } from "./data/recipes.js";
 import { loadEnabled, saveEnabled } from "./store.js";
 import { nodeQualities, nodeRate, sourceTotal, validInRegion } from "./lpmodel.js";
 import { currentRegion, regionOptions, regionLabel, regionTagElement, initRegionUI } from "./region.js";
+import { loadCustomRecipes, saveCustomRecipes, newCustomId } from "./custom-recipes.js";
+
+const customs = loadCustomRecipes();
+const custIds = new Set(customs.map((c) => c.id));
+const RECIPES = [...BASE_RECIPES.filter((r) => !custIds.has(r.id)), ...customs];
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
@@ -72,15 +77,9 @@ function countsText(counts, r) {
 
 function detailLine(r) {
   const parts = [];
-  if (r.facility) parts.push(r.facility + " (" + r.craftingTime + "s)");
   const res = Object.entries(r.residues || {});
   if (res.length) parts.push("residue " + res.map(([m, q]) => fmt(q) + " " + m).join(", "));
   if (r.source) parts.push(capText(r));
-  if (r.source) {
-    if (r.energy) parts.push(fmt(r.energy) + " e/unit");
-  } else if (r.energy) {
-    parts.push(fmt(r.energy) + " kJ/run");
-  }
   return parts.join("  |  ");
 }
 
@@ -95,7 +94,7 @@ function ioLine(tagClass, tagText, materials) {
   chips.className = "tag-chips";
   for (const [m, q] of materials) {
     const chip = document.createElement("span");
-    chip.className = "mat-chip" + (tagClass === "out" ? " out" : "");
+    chip.className = "mat-chip";
     chip.textContent = fmt(q) + " " + m;
     chips.appendChild(chip);
   }
@@ -139,13 +138,28 @@ function countText(enabledCount, total, shown) {
   return parts.join(" ");
 }
 
+function deleteCustom(r) {
+  const ci = customs.findIndex((c) => c.id === r.id);
+  if (ci >= 0) customs.splice(ci, 1);
+  saveCustomRecipes(customs);
+  custIds.delete(r.id);
+  const ri = RECIPES.indexOf(r);
+  if (ri >= 0) RECIPES.splice(ri, 1);
+  delete currentEnabled()[r.id];
+  saveEnabled(currentEnabled(), currentRegion());
+  state.facility = "";
+  initFacilityOptions();
+  render();
+}
+
 function render() {
   els.list.innerHTML = "";
   const regionSet = regionRecipes();
   const shown = regionSet.filter(matchesFilter);
   for (const r of shown) {
+    const isCustom = custIds.has(r.id);
     const row = document.createElement("label");
-    row.className = "recipe-row" + (currentEnabled()[r.id] ? "" : " off");
+    row.className = "recipe-row" + (isCustom ? " custom" : "") + (currentEnabled()[r.id] ? "" : " off");
     const cb = document.createElement("input");
     cb.type = "checkbox";
     cb.checked = currentEnabled()[r.id];
@@ -159,9 +173,31 @@ function render() {
     const name = document.createElement("span");
     name.className = "recipe-name";
     name.textContent = r.name;
+    const nameWrap = document.createElement("span");
+    nameWrap.className = "recipe-name-wrap";
+    nameWrap.appendChild(name);
+    if (r.facility) {
+      const sub = document.createElement("span");
+      sub.className = "recipe-name-sub";
+      sub.textContent = r.facility + " (" + r.craftingTime + "s)";
+      nameWrap.appendChild(sub);
+    }
     row.appendChild(cb);
-    row.appendChild(name);
+    row.appendChild(nameWrap);
     row.appendChild(rowDetail(r));
+    if (isCustom) {
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "recipe-del";
+      del.title = "Delete custom recipe";
+      del.textContent = "×";
+      del.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        deleteCustom(r);
+      });
+      row.appendChild(del);
+    }
     els.list.appendChild(row);
   }
   const enabledCount = regionSet.filter((x) => currentEnabled()[x.id]).length;
@@ -181,3 +217,110 @@ els.facility.addEventListener("change", () => {
 initRegionUI(els.region, () => render());
 initFacilityOptions();
 render();
+
+const add = {
+  panel: document.getElementById("add-panel"),
+  name: document.getElementById("custom-name"),
+  facility: document.getElementById("custom-facility"),
+  suggest: document.getElementById("facility-suggest"),
+  time: document.getElementById("custom-time"),
+  region: document.getElementById("custom-region"),
+  inputs: document.getElementById("custom-inputs"),
+  outputs: document.getElementById("custom-outputs"),
+  error: document.getElementById("add-error")
+};
+
+add.region.innerHTML =
+  '<option value="0">' + regionLabel(0) + "</option>" +
+  regionOptions().map((id) => '<option value="' + id + '">' + regionLabel(id) + "</option>").join("");
+
+function ioRow(material) {
+  const row = document.createElement("div");
+  row.className = "io-input-row";
+  const mat = document.createElement("input");
+  mat.className = "io-mat";
+  mat.type = "text";
+  mat.placeholder = "Material";
+  mat.value = material;
+  const qty = document.createElement("input");
+  qty.className = "io-qty";
+  qty.type = "number";
+  qty.min = "0";
+  qty.step = "any";
+  qty.placeholder = "Qty";
+  const remove = document.createElement("button");
+  remove.type = "button";
+  remove.className = "io-remove";
+  remove.textContent = "×";
+  remove.addEventListener("click", () => row.remove());
+  row.appendChild(mat);
+  row.appendChild(qty);
+  row.appendChild(remove);
+  return row;
+}
+
+function collectIo(container) {
+  const out = {};
+  for (const row of container.querySelectorAll(".io-input-row")) {
+    const mat = row.querySelector(".io-mat").value.trim();
+    const qty = Number(row.querySelector(".io-qty").value);
+    if (!mat || !(Number.isFinite(qty) && qty > 0)) continue;
+    out[mat] = (out[mat] || 0) + qty;
+  }
+  return out;
+}
+
+function openAddPanel() {
+  add.error.textContent = "";
+  add.panel.hidden = false;
+  add.suggest.innerHTML = [...new Set(RECIPES.map((r) => r.facility).filter(Boolean))].sort()
+    .map((f) => '<option value="' + f + '"></option>')
+    .join("");
+  for (const container of [add.inputs, add.outputs]) {
+    if (!container.querySelector(".io-input-row")) container.appendChild(ioRow(""));
+  }
+  add.name.focus();
+}
+
+function closeAddPanel() {
+  add.panel.hidden = true;
+}
+
+document.getElementById("add-recipe").addEventListener("click", () => {
+  if (add.panel.hidden) openAddPanel();
+});
+
+document.getElementById("add-in-row").addEventListener("click", () => add.inputs.appendChild(ioRow("")));
+document.getElementById("add-out-row").addEventListener("click", () => add.outputs.appendChild(ioRow("")));
+document.getElementById("btn-cancel-add").addEventListener("click", () => closeAddPanel());
+
+document.getElementById("btn-confirm-add").addEventListener("click", () => {
+  const name = add.name.value.trim();
+  const facility = add.facility.value.trim();
+  const craftingTime = Number(add.time.value);
+  const region = Number(add.region.value);
+  if (!name) {
+    add.error.textContent = "Name is required.";
+    return;
+  }
+  if (!(Number.isFinite(craftingTime) && craftingTime > 0)) {
+    add.error.textContent = "Crafting time must be greater than 0.";
+    return;
+  }
+  const inputs = collectIo(add.inputs);
+  const outputs = collectIo(add.outputs);
+  if (!Object.keys(outputs).length) {
+    add.error.textContent = "At least one output is required.";
+    return;
+  }
+  const recipe = { id: newCustomId(), name, facility, craftingTime, inputs, outputs };
+  if (region) recipe.region = region;
+  customs.push(recipe);
+  custIds.add(recipe.id);
+  saveCustomRecipes(customs);
+  RECIPES.push(recipe);
+  currentEnabled()[recipe.id] = false;
+  initFacilityOptions();
+  render();
+  closeAddPanel();
+});

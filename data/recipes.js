@@ -4281,3 +4281,33 @@ export const RECIPES = [
     "region": 2
   }
 ];
+
+export const FACILITIES = {
+  "Acid Resistant Pump Mk II": 20,
+  "Depot Loader": 0,
+  "Depot Unloader": 0,
+  "Expanded Crucible": 100,
+  "Filling Unit": 20,
+  "Fitting Unit": 20,
+  "Fluid Pump": 10,
+  "Fluid-Gas Transmuting Unit": 50,
+  "Forge of the Sky": 50,
+  "Gas Dispersing Unit": 0,
+  "Gas Extractor": 0,
+  "Gas Reactor Globe": 50,
+  "Gearing Unit": 10,
+  "Grinding Unit": 50,
+  "Moulding Unit": 10,
+  "Packaging Unit": 20,
+  "Planting Unit": 20,
+  "Purification Unit": 50,
+  "Reactor Crucible": 50,
+  "Refining Unit": 5,
+  "Seed-Picking Unit": 10,
+  "Separating Unit": 20,
+  "Sewage Inlet": 0,
+  "Shredding Unit": 5,
+  "Solid-Gas Transmuting Unit": 50,
+  "Thermal Bank": 0,
+  "Water Treatment Unit": 50
+};

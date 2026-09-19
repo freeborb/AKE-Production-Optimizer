@@ -122,6 +122,13 @@ const facilityPower = parseFacilityPowers(
   "src/data/power.ts"
 );
 
+const facilityNameToKw = {};
+for (const key of Object.keys(facilityPower)) {
+  const id = enumKeyToValue.facility[key];
+  const name = id && localeFacility[id];
+  if (name && facilityNameToKw[name] == null) facilityNameToKw[name] = facilityPower[key];
+}
+
 const VALLEY = 1;
 const WULING = 2;
 
@@ -329,9 +336,16 @@ if (collisions.length) {
   for (const c of collisions) console.log("  " + c);
 }
 
+const facKwSorted = Object.fromEntries(
+  Object.entries(facilityNameToKw).sort((a, b) => a[0].localeCompare(b[0]))
+);
+console.log("facilities with power:", Object.keys(facKwSorted).length);
+
 const out =
   "export const RECIPES = " +
   JSON.stringify(recipes, null, 2) +
+  ";\n\nexport const FACILITIES = " +
+  JSON.stringify(facKwSorted, null, 2) +
   ";";
 
 fs.writeFileSync(path.join(projectRoot, "data", "recipes.js"), out);

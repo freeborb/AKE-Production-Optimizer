@@ -1,8 +1,11 @@
-import { RECIPES } from "./data/recipes.js";
+import { RECIPES as BASE_RECIPES } from "./data/recipes.js";
+import { mergeCustomRecipes } from "./custom-recipes.js";
 import { solveProblem } from "./solver.js";
 import { loadEnabled, REGION_KEY } from "./store.js";
 import { validInRegion, nodeQualities, sourceTotal, sourceUnlimited } from "./lpmodel.js";
 import { currentRegion, regionOptions, setRegion, initRegionUI } from "./region.js";
+
+const RECIPES = mergeCustomRecipes(BASE_RECIPES);
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
