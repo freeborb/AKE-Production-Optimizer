@@ -7,13 +7,22 @@ export function validInRegion(r, region) {
   return !!region && r.regions.includes(region);
 }
 
-export function capFor(r, region) {
-  if (r.capacity === undefined || r.capacity === null) return Infinity;
-  if (typeof r.capacity === "object") {
-    const c = region ? r.capacity[region] : undefined;
-    return Number.isFinite(c) ? c : Infinity;
+export function nodeQualities(r) {
+  return r.nodes ? Object.keys(r.nodes) : [];
+}
+
+export function nodeRate(r, q) {
+  return r.nodes?.[q]?.rate ?? 0;
+}
+
+export function sourceTotal(r, region, counts) {
+  let total = 0;
+  for (const q of nodeQualities(r)) {
+    let n = counts?.[q];
+    if (!(Number.isFinite(n) && n >= 0)) n = r.defaults?.[region]?.[q] ?? 0;
+    total += n * nodeRate(r, q);
   }
-  return r.capacity;
+  return total;
 }
 
 function fmt(n) {
@@ -64,8 +73,6 @@ export function buildLP(recipes, opts = {}) {
       const a = Number(availability[r.id]);
       if (Number.isFinite(a) && a >= 0) ub = a;
     }
-    const cap = capFor(r, region);
-    if (Number.isFinite(cap)) ub = Math.min(ub, cap);
     if (Number.isFinite(ub)) capacities.set(v, ub);
   }
 

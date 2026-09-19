@@ -155,9 +155,36 @@ input[type="search"] {
 
 .avail-row {
   display: grid;
-  grid-template-columns: 1fr 88px;
-  gap: 8px;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
   align-items: center;
+  padding: 6px 8px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.avail-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avail-q {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.avail-inputs input {
+  width: 64px;
+}
+
+.avail-total {
+  color: var(--accent);
+  font-style: italic;
+  margin-left: 4px;
+  min-width: 74px;
+  text-align: right;
 }
 
 .recipe-row {

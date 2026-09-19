@@ -4390,9 +4390,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
-    "capacity": {
-      "valley_4": 560,
-      "wuling": 540
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "valley_4": {
+        "hp": 28,
+        "lp": 0
+      },
+      "wuling": {
+        "hp": 22,
+        "lp": 10
+      }
     }
   },
   {
@@ -4404,10 +4418,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "valley_4": {
+        "hp": 12,
+        "lp": 0
+      }
+    },
     "regions": [
       "valley_4"
-    ],
-    "capacity": 240
+    ]
   },
   {
     "id": "source_iron_ore",
@@ -4418,9 +4445,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
-    "capacity": {
-      "valley_4": 1080,
-      "wuling": 120
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "valley_4": {
+        "hp": 54,
+        "lp": 0
+      },
+      "wuling": {
+        "hp": 6,
+        "lp": 0
+      }
     }
   },
   {
@@ -4432,10 +4473,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "wuling": {
+        "hp": 21,
+        "lp": 0
+      }
+    },
     "regions": [
       "wuling"
-    ],
-    "capacity": 420
+    ]
   },
   {
     "id": "source_liquid_water",
@@ -4445,7 +4499,20 @@ export const RECIPES = [
       "Clean Water": 1
     },
     "energy": 10,
-    "source": true
+    "source": true,
+    "nodes": {
+      "node": {
+        "rate": 60
+      }
+    },
+    "defaults": {
+      "valley_4": {
+        "node": 10
+      },
+      "wuling": {
+        "node": 10
+      }
+    }
   },
   {
     "id": "source_liquid_acid",
@@ -4456,6 +4523,16 @@ export const RECIPES = [
     },
     "energy": 20,
     "source": true,
+    "nodes": {
+      "node": {
+        "rate": 60
+      }
+    },
+    "defaults": {
+      "wuling": {
+        "node": 10
+      }
+    },
     "regions": [
       "wuling"
     ]
@@ -4469,10 +4546,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "wuling": {
+        "hp": 23,
+        "lp": 0
+      }
+    },
     "regions": [
       "wuling"
-    ],
-    "capacity": 460
+    ]
   },
   {
     "id": "source_gas_xiranite",
@@ -4483,10 +4573,23 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "nodes": {
+      "hp": {
+        "rate": 20
+      },
+      "lp": {
+        "rate": 10
+      }
+    },
+    "defaults": {
+      "wuling": {
+        "hp": 5,
+        "lp": 0
+      }
+    },
     "regions": [
       "wuling"
-    ],
-    "capacity": 100
+    ]
   },
   {
     "id": "source_muck",
@@ -4497,6 +4600,16 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "nodes": {
+      "node": {
+        "rate": 30
+      }
+    },
+    "defaults": {
+      "wuling": {
+        "node": 10
+      }
+    },
     "regions": [
       "wuling"
     ]

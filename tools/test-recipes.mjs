@@ -1,11 +1,17 @@
 import { RECIPES } from "../data/recipes.js";
-import { buildLP, computeBalances, validInRegion } from "../lpmodel.js";
+import { buildLP, computeBalances, validInRegion, sourceTotal } from "../lpmodel.js";
 import Highs from "highs";
 
 const solver = await Highs();
 
 function regionRecipes(region) {
   return RECIPES.filter((r) => validInRegion(r, region));
+}
+
+function defaultAvailability(recipes, region) {
+  const map = {};
+  for (const r of recipes) if (r.source) map[r.id] = sourceTotal(r, region);
+  return map;
 }
 
 function printPlan(label, recipes, lp, result) {
@@ -41,7 +47,7 @@ for (const [region, target] of [
   ["wuling", "Steel"]
 ]) {
   const recipes = regionRecipes(region);
-  const result = solve(recipes, { mode: "maximize", target, region });
+  const result = solve(recipes, { mode: "maximize", target, region, availability: defaultAvailability(recipes, region) });
   if (result.Status !== "Optimal") {
     console.log("=== " + region + " " + target + " === status " + result.Status);
     console.log(result.Log || "no log");
@@ -52,7 +58,13 @@ for (const [region, target] of [
 
 const region = "valley_4";
 const recipes = regionRecipes(region);
-const result = solve(recipes, { mode: "minimize", target: "Steel", targetAmount: 10, region });
+const result = solve(recipes, {
+  mode: "minimize",
+  target: "Steel",
+  targetAmount: 10,
+  region,
+  availability: defaultAvailability(recipes, region)
+});
 if (result.Status !== "Optimal") {
   console.log("=== " + region + " minimize Steel === status " + result.Status);
   process.exit(1);

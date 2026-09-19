@@ -1,5 +1,9 @@
 import { RECIPES } from "./data/recipes.js";
 import { loadEnabled, saveEnabled } from "./store.js";
+import { nodeQualities, nodeRate, sourceTotal } from "./lpmodel.js";
+
+const REGION_LABEL = { valley_4: "Valley 4", wuling: "Wuling" };
+const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
 const state = {
   enabled: loadEnabled(RECIPES),
@@ -16,16 +20,26 @@ function fmt(n) {
   return String(Math.round(n * 1000) / 1000);
 }
 
-const REGION_LABEL = { valley_4: "Valley 4", wuling: "Wuling" };
-
 function capText(r) {
-  if (r.capacity === undefined || r.capacity === null) return "external (unlimited)";
-  if (typeof r.capacity === "object") {
-    return Object.entries(r.capacity)
-      .map(([key, c]) => REGION_LABEL[key] + " \u2264 " + fmt(c) + "/min")
-      .join(", ");
+  const parts = [];
+  const quals = nodeQualities(r);
+  if (quals.length) {
+    parts.push(quals.map((q) => (QUALITY_LABEL[q] || q) + " " + fmt(nodeRate(r, q)) + "/min").join(", "));
   }
-  return "external \u2264 " + fmt(r.capacity) + "/min";
+  const defs = Object.entries(r.defaults || {});
+  if (defs.length) {
+    parts.push(
+      "default " +
+        defs.map(([reg, counts]) => REGION_LABEL[reg] + " " + countsText(counts, r)).join(" | ")
+    );
+  }
+  return parts.join("  |  ");
+}
+
+function countsText(counts, r) {
+  return nodeQualities(r)
+    .map((q) => (counts[q] ?? 0) + " " + (QUALITY_LABEL[q] || q))
+    .join(" + ") + " = " + fmt(sourceTotal(r, null, counts)) + "/min";
 }
 
 function matchesFilter(r) {

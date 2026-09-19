@@ -125,16 +125,88 @@ const facilityPower = parseFacilityPowers(
 const VALLEY = "valley_4";
 const WULING = "wuling";
 
+const ORE_NODES = { hp: { rate: 20 }, lp: { rate: 10 } };
+const LIQUID_NODES = { node: { rate: 60 } };
+
 const SOURCES = [
-  { id: "source_originium_ore", item: "item_originium_ore", cap: { [VALLEY]: 560, [WULING]: 540 }, tag: "Mine", energy: 0 },
-  { id: "source_quartz_sand", item: "item_quartz_sand", cap: 240, regions: [VALLEY], tag: "Mine", energy: 0 },
-  { id: "source_iron_ore", item: "item_iron_ore", cap: { [VALLEY]: 1080, [WULING]: 120 }, tag: "Mine", energy: 0 },
-  { id: "source_copper_ore", item: "item_copper_ore", cap: 420, regions: [WULING], tag: "Mine", energy: 0 },
-  { id: "source_liquid_water", item: "item_liquid_water", cap: null, tag: "Pump", energy: 10 },
-  { id: "source_liquid_acid", item: "item_liquid_acid", cap: null, regions: [WULING], tag: "Pump", energy: 20 },
-  { id: "source_gas_inert", item: "item_gas_inert", cap: 460, regions: [WULING], tag: "Extract", energy: 0 },
-  { id: "source_gas_xiranite", item: "item_gas_xiranite", cap: 100, regions: [WULING], tag: "Extract", energy: 0 },
-  { id: "source_muck", item: "item_muck_feces_1", cap: null, regions: [WULING], tag: "Collect", energy: 0 },
+  {
+    id: "source_originium_ore",
+    item: "item_originium_ore",
+    tag: "Mine",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [VALLEY]: { hp: 28, lp: 0 }, [WULING]: { hp: 22, lp: 10 } },
+  },
+  {
+    id: "source_quartz_sand",
+    item: "item_quartz_sand",
+    tag: "Mine",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [VALLEY]: { hp: 12, lp: 0 } },
+    regions: [VALLEY],
+  },
+  {
+    id: "source_iron_ore",
+    item: "item_iron_ore",
+    tag: "Mine",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [VALLEY]: { hp: 54, lp: 0 }, [WULING]: { hp: 6, lp: 0 } },
+  },
+  {
+    id: "source_copper_ore",
+    item: "item_copper_ore",
+    tag: "Mine",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [WULING]: { hp: 21, lp: 0 } },
+    regions: [WULING],
+  },
+  {
+    id: "source_liquid_water",
+    item: "item_liquid_water",
+    tag: "Pump",
+    energy: 10,
+    nodes: LIQUID_NODES,
+    defaults: { [VALLEY]: { node: 10 }, [WULING]: { node: 10 } },
+  },
+  {
+    id: "source_liquid_acid",
+    item: "item_liquid_acid",
+    tag: "Pump",
+    energy: 20,
+    nodes: LIQUID_NODES,
+    defaults: { [WULING]: { node: 10 } },
+    regions: [WULING],
+  },
+  {
+    id: "source_gas_inert",
+    item: "item_gas_inert",
+    tag: "Extract",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [WULING]: { hp: 23, lp: 0 } },
+    regions: [WULING],
+  },
+  {
+    id: "source_gas_xiranite",
+    item: "item_gas_xiranite",
+    tag: "Extract",
+    energy: 0,
+    nodes: ORE_NODES,
+    defaults: { [WULING]: { hp: 5, lp: 0 } },
+    regions: [WULING],
+  },
+  {
+    id: "source_muck",
+    item: "item_muck_feces_1",
+    tag: "Collect",
+    energy: 0,
+    nodes: { node: { rate: 30 } },
+    defaults: { [WULING]: { node: 10 } },
+    regions: [WULING],
+  },
 ];
 
 const BURNS = [
@@ -228,9 +300,10 @@ for (const s of SOURCES) {
     outputs: { [name]: 1 },
     energy: s.energy,
     source: true,
+    nodes: s.nodes,
+    defaults: s.defaults,
   };
   if (s.regions) recipe.regions = s.regions;
-  if (s.cap != null) recipe.capacity = s.cap;
   recipes.push(recipe);
 }
 

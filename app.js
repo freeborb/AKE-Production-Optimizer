@@ -1,7 +1,9 @@
 import { RECIPES } from "./data/recipes.js";
 import { solveProblem } from "./solver.js";
 import { loadEnabled } from "./store.js";
-import { validInRegion, capFor } from "./lpmodel.js";
+import { validInRegion, nodeQualities, sourceTotal } from "./lpmodel.js";
+
+const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
 const REGIONS = [
   { key: "valley_4", label: "Valley 4" },
@@ -41,8 +43,7 @@ for (const reg of REGIONS) {
   };
   for (const r of RECIPES) {
     if (!r.source || !validInRegion(r, reg.key)) continue;
-    const cap = capFor(r, reg.key);
-    def.availability[r.id] = Number.isFinite(cap) ? cap : 100;
+    def.availability[r.id] = { ...(r.defaults?.[reg.key] || {}) };
   }
   const saved = persisted.states?.[reg.key] || {};
   state.regions[reg.key] = {
@@ -133,19 +134,38 @@ function renderAvailability() {
   const s = currentState();
   for (const r of RECIPES) {
     if (!r.source || !validInRegion(r, state.region)) continue;
-    const row = document.createElement("label");
-    row.className = "avail-row";
+    const counts = (s.availability[r.id] = s.availability[r.id] || {});
+    const container = document.createElement("div");
+    container.className = "avail-row";
     const name = document.createElement("span");
     name.textContent = r.name;
-    const input = document.createElement("input");
-    input.type = "number";
-    input.min = "0";
-    input.step = "1";
-    input.value = s.availability[r.id];
-    input.dataset.id = r.id;
-    row.appendChild(name);
-    row.appendChild(input);
-    els.availability.appendChild(row);
+    container.appendChild(name);
+    const inputsWrap = document.createElement("div");
+    inputsWrap.className = "avail-inputs";
+    for (const q of nodeQualities(r)) {
+      const qlabel = document.createElement("span");
+      qlabel.className = "avail-q";
+      qlabel.textContent = QUALITY_LABEL[q] || q;
+      inputsWrap.appendChild(qlabel);
+      const input = document.createElement("input");
+      input.type = "number";
+      input.min = "0";
+      input.step = "1";
+      input.value = counts[q] ?? 0;
+      input.dataset.id = r.id;
+      input.dataset.q = q;
+      input.addEventListener("input", () => {
+        counts[q] = Number(input.value) || 0;
+        totalEl.textContent = fmtNum(sourceTotal(r, state.region, counts)) + "/min";
+      });
+      inputsWrap.appendChild(input);
+    }
+    const totalEl = document.createElement("span");
+    totalEl.className = "avail-total";
+    totalEl.textContent = fmtNum(sourceTotal(r, state.region, counts)) + "/min";
+    inputsWrap.appendChild(totalEl);
+    container.appendChild(inputsWrap);
+    els.availability.appendChild(container);
   }
 }
 
@@ -159,8 +179,9 @@ function captureControls() {
   s.mode = els.mode.value;
   s.target = els.target.value;
   s.targetAmount = Number(els.targetAmount.value) || 0;
-  for (const input of els.availability.querySelectorAll("input")) {
-    s.availability[input.dataset.id] = Number(input.value);
+  for (const input of els.availability.querySelectorAll("input[data-q]")) {
+    s.availability[input.dataset.id] = s.availability[input.dataset.id] || {};
+    s.availability[input.dataset.id][input.dataset.q] = Number(input.value) || 0;
   }
 }
 
@@ -177,8 +198,8 @@ function updateModeUI() {
   const isMin = currentState().mode === "minimize";
   els.amountWrap.style.display = isMin ? "" : "none";
   document.getElementById("availability-label").textContent = isMin
-    ? "Raw availability (caps)"
-    : "Available raw material (per min)";
+    ? "Raw nodes (limits)"
+    : "Raw nodes (available)";
 }
 
 function clearResult() {
@@ -273,11 +294,15 @@ els.solve.addEventListener("click", async () => {
     els.status.textContent = "Enable at least one recipe.";
     return;
   }
+  const totals = {};
+  for (const r of recipes) {
+    if (r.source) totals[r.id] = sourceTotal(r, state.region, s.availability[r.id] || {});
+  }
   const opts = {
     mode: s.mode,
     target: s.target,
     targetAmount: s.targetAmount,
-    availability: s.availability,
+    availability: totals,
     region: state.region
   };
   els.status.textContent = "Solving...";
