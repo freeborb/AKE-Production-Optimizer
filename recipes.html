@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipes - AKE Production Optimizer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>AKE Production Optimizer</h1>
+      <p class="muted">Recipe data for the production-line rate calculator.</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Calculator</a>
+      <a class="active" href="recipes.html">Recipes</a>
+    </nav>
+  </header>
+
+  <main class="full">
+    <section class="panel">
+      <h2>All recipes</h2>
+      <p class="muted" id="enabled-count"></p>
+      <input id="search" type="search" placeholder="Filter recipes by name..." />
+      <div id="recipe-list" class="stack"></div>
+    </section>
+  </main>
+
+  <footer class="muted">
+    Toggle recipes on or off; the Calculator only includes enabled recipes. Recipes live in <code>data/recipes.js</code>.
+  </footer>
+
+  <script type="module" src="recipes.js"></script>
+</body>
+</html>

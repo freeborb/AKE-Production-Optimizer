@@ -8,8 +8,14 @@
 </head>
 <body>
   <header>
-    <h1>AKE Production Optimizer</h1>
-    <p class="muted">Linear-programming rate calculator for production lines with residues, recycling loops, and battery-powered energy.</p>
+    <div class="brand">
+      <h1>AKE Production Optimizer</h1>
+      <p class="muted">Linear-programming rate calculator for production lines with residues, recycling loops, and battery-powered energy.</p>
+    </div>
+    <nav class="nav">
+      <a class="active" href="index.html">Calculator</a>
+      <a href="recipes.html">Recipes</a>
+    </nav>
   </header>
 
   <main class="layout">
@@ -34,9 +40,7 @@
       <h2 id="availability-label">Available raw material (per min)</h2>
       <div id="availability" class="stack"></div>
 
-      <h2>Recipes</h2>
-      <p class="muted" id="material-count"></p>
-      <div id="recipe-list" class="stack"></div>
+      <p class="muted">Enable/disable recipes on the <a href="recipes.html">Recipes</a> page.</p>
 
       <button id="solve">Solve</button>
     </section>

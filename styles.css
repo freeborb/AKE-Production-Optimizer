@@ -30,7 +30,42 @@ body {
 }
 
 header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
   padding: 18px 24px 6px;
+}
+
+.brand {
+  flex: 1;
+  min-width: 260px;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.nav a.active {
+  color: #fff;
+  background: var(--accent-dim);
+  border-color: var(--accent);
 }
 
 h1 {
@@ -63,6 +98,11 @@ code {
   gap: 16px;
   padding: 12px 24px 24px;
   align-items: start;
+}
+
+.full {
+  padding: 12px 24px 24px;
+  max-width: 1100px;
 }
 
 @media (max-width: 860px) {
@@ -98,7 +138,8 @@ label.field-grid span {
 }
 
 select,
-input[type="number"] {
+input[type="number"],
+input[type="search"] {
   background: var(--panel-2);
   color: var(--text);
   border: 1px solid var(--line);
@@ -106,6 +147,10 @@ input[type="number"] {
   padding: 6px 8px;
   font-size: 13px;
   width: 100%;
+}
+
+input[type="search"] {
+  margin-bottom: 10px;
 }
 
 .avail-row {

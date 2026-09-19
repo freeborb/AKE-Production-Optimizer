@@ -1,17 +1,16 @@
 import { RECIPES } from "./data/recipes.js";
 import { solveProblem } from "./solver.js";
-import { collectMaterials } from "./lpmodel.js";
+import { loadEnabled } from "./store.js";
 
 const state = {
   mode: "maximize",
   target: "Steel",
   targetAmount: 1,
   availability: {},
-  enabled: {}
+  enabled: loadEnabled(RECIPES)
 };
 
 for (const r of RECIPES) {
-  state.enabled[r.id] = true;
   if (r.source) state.availability[r.id] = r.capacity ?? 100;
 }
 
@@ -21,8 +20,6 @@ const els = {
   targetAmount: document.getElementById("target-amount"),
   amountWrap: document.getElementById("amount-wrap"),
   availability: document.getElementById("availability"),
-  recipeList: document.getElementById("recipe-list"),
-  materialCount: document.getElementById("material-count"),
   solve: document.getElementById("solve"),
   status: document.getElementById("status"),
   objective: document.getElementById("objective"),
@@ -78,47 +75,6 @@ function renderAvailability() {
   }
 }
 
-function renderRecipes() {
-  els.recipeList.innerHTML = "";
-  for (const r of RECIPES) {
-    const row = document.createElement("label");
-    row.className = "recipe-row" + (state.enabled[r.id] ? "" : " off");
-    const cb = document.createElement("input");
-    cb.type = "checkbox";
-    cb.checked = state.enabled[r.id];
-    cb.dataset.id = r.id;
-    cb.addEventListener("change", () => {
-      state.enabled[r.id] = cb.checked;
-      row.classList.toggle("off", !cb.checked);
-    });
-    const name = document.createElement("span");
-    name.className = "recipe-name";
-    name.textContent = r.name;
-    const detail = document.createElement("span");
-    detail.className = "recipe-detail";
-    const parts = [];
-    const inText = Object.entries(r.inputs).map(([m, q]) => fmtQty(q) + " " + m).join(", ");
-    if (inText) parts.push("in " + inText);
-    const outText = Object.entries(r.outputs).map(([m, q]) => fmtQty(q) + " " + m).join(", ");
-    parts.push("out " + outText);
-    const res = Object.entries(r.residues || {});
-    if (res.length) parts.push("residue " + res.map(([m, q]) => fmtQty(q) + " " + m).join(", "));
-    if (r.source) parts.push("external");
-    if (r.energy) parts.push("energy " + fmtQty(r.energy));
-    detail.textContent = parts.join("  |  ");
-    row.appendChild(cb);
-    row.appendChild(name);
-    row.appendChild(detail);
-    els.recipeList.appendChild(row);
-  }
-  const mats = new Set(collectMaterials(activeRecipes()));
-  els.materialCount.textContent = mats.size + " materials modeled (incl. Energy)";
-}
-
-function fmtQty(n) {
-  return String(Math.round(n * 1000) / 1000);
-}
-
 function fmtNum(n) {
   if (!Number.isFinite(n)) return String(n);
   return Number(n.toFixed(3)).toLocaleString(undefined, { maximumFractionDigits: 3 });
@@ -134,9 +90,6 @@ function syncState() {
   state.targetAmount = Number(els.targetAmount.value) || 0;
   for (const input of els.availability.querySelectorAll("input")) {
     state.availability[input.dataset.id] = Number(input.value);
-  }
-  for (const cb of els.recipeList.querySelectorAll("input")) {
-    state.enabled[cb.dataset.id] = cb.checked;
   }
 }
 
@@ -229,5 +182,4 @@ els.solve.addEventListener("click", async () => {
 
 fillTargetSelect();
 renderAvailability();
-renderRecipes();
 updateModeUI();
