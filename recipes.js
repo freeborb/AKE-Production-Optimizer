@@ -16,6 +16,18 @@ function fmt(n) {
   return String(Math.round(n * 1000) / 1000);
 }
 
+const REGION_LABEL = { valley_4: "Valley 4", wuling: "Wuling" };
+
+function capText(r) {
+  if (r.capacity === undefined || r.capacity === null) return "external (unlimited)";
+  if (typeof r.capacity === "object") {
+    return Object.entries(r.capacity)
+      .map(([key, c]) => REGION_LABEL[key] + " \u2264 " + fmt(c) + "/min")
+      .join(", ");
+  }
+  return "external \u2264 " + fmt(r.capacity) + "/min";
+}
+
 function matchesFilter(r) {
   if (!state.filter) return true;
   return r.name.toLowerCase().includes(state.filter);
@@ -30,7 +42,8 @@ function detailText(r) {
   if (outText) parts.push("out " + outText);
   const res = Object.entries(r.residues || {});
   if (res.length) parts.push("residue " + res.map(([m, q]) => fmt(q) + " " + m).join(", "));
-  if (r.source) parts.push("external" + (r.capacity ? " \u2264 " + r.capacity + "/min" : " (unlimited)"));
+  if (r.source) parts.push(capText(r));
+  if (r.regions) parts.push("[" + r.regions.map((k) => REGION_LABEL[k]).join(", ") + "]");
   return parts.join("  |  ");
 }
 

@@ -4390,7 +4390,10 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
-    "capacity": 560
+    "capacity": {
+      "valley_4": 560,
+      "wuling": 540
+    }
   },
   {
     "id": "source_quartz_sand",
@@ -4401,6 +4404,9 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "regions": [
+      "valley_4"
+    ],
     "capacity": 240
   },
   {
@@ -4412,7 +4418,10 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
-    "capacity": 1080
+    "capacity": {
+      "valley_4": 1080,
+      "wuling": 120
+    }
   },
   {
     "id": "source_copper_ore",
@@ -4423,6 +4432,9 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "regions": [
+      "wuling"
+    ],
     "capacity": 420
   },
   {
@@ -4443,7 +4455,10 @@ export const RECIPES = [
       "Precipitation Acid": 1
     },
     "energy": 20,
-    "source": true
+    "source": true,
+    "regions": [
+      "wuling"
+    ]
   },
   {
     "id": "source_gas_inert",
@@ -4454,6 +4469,9 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "regions": [
+      "wuling"
+    ],
     "capacity": 460
   },
   {
@@ -4465,6 +4483,9 @@ export const RECIPES = [
     },
     "energy": 0,
     "source": true,
+    "regions": [
+      "wuling"
+    ],
     "capacity": 100
   },
   {
@@ -4475,7 +4496,10 @@ export const RECIPES = [
       "Burdo-Muck": 1
     },
     "energy": 0,
-    "source": true
+    "source": true,
+    "regions": [
+      "wuling"
+    ]
   },
   {
     "id": "burn_item_proc_battery_1",
@@ -4488,7 +4512,10 @@ export const RECIPES = [
     "outputs": {
       "Energy": 8800
     },
-    "energy": 0
+    "energy": 0,
+    "regions": [
+      "valley_4"
+    ]
   },
   {
     "id": "burn_item_proc_battery_2",
@@ -4501,7 +4528,10 @@ export const RECIPES = [
     "outputs": {
       "Energy": 16800
     },
-    "energy": 0
+    "energy": 0,
+    "regions": [
+      "valley_4"
+    ]
   },
   {
     "id": "burn_item_proc_battery_3",
@@ -4514,7 +4544,10 @@ export const RECIPES = [
     "outputs": {
       "Energy": 44000
     },
-    "energy": 0
+    "energy": 0,
+    "regions": [
+      "valley_4"
+    ]
   },
   {
     "id": "burn_item_proc_battery_4",
@@ -4527,7 +4560,10 @@ export const RECIPES = [
     "outputs": {
       "Energy": 64000
     },
-    "energy": 0
+    "energy": 0,
+    "regions": [
+      "wuling"
+    ]
   },
   {
     "id": "burn_item_proc_battery_5",
@@ -4540,6 +4576,9 @@ export const RECIPES = [
     "outputs": {
       "Energy": 128000
     },
-    "energy": 0
+    "energy": 0,
+    "regions": [
+      "wuling"
+    ]
   }
 ];

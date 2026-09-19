@@ -122,24 +122,27 @@ const facilityPower = parseFacilityPowers(
   "src/data/power.ts"
 );
 
+const VALLEY = "valley_4";
+const WULING = "wuling";
+
 const SOURCES = [
-  { id: "source_originium_ore", item: "item_originium_ore", cap: 560, tag: "Mine", energy: 0 },
-  { id: "source_quartz_sand", item: "item_quartz_sand", cap: 240, tag: "Mine", energy: 0 },
-  { id: "source_iron_ore", item: "item_iron_ore", cap: 1080, tag: "Mine", energy: 0 },
-  { id: "source_copper_ore", item: "item_copper_ore", cap: 420, tag: "Mine", energy: 0 },
+  { id: "source_originium_ore", item: "item_originium_ore", cap: { [VALLEY]: 560, [WULING]: 540 }, tag: "Mine", energy: 0 },
+  { id: "source_quartz_sand", item: "item_quartz_sand", cap: 240, regions: [VALLEY], tag: "Mine", energy: 0 },
+  { id: "source_iron_ore", item: "item_iron_ore", cap: { [VALLEY]: 1080, [WULING]: 120 }, tag: "Mine", energy: 0 },
+  { id: "source_copper_ore", item: "item_copper_ore", cap: 420, regions: [WULING], tag: "Mine", energy: 0 },
   { id: "source_liquid_water", item: "item_liquid_water", cap: null, tag: "Pump", energy: 10 },
-  { id: "source_liquid_acid", item: "item_liquid_acid", cap: null, tag: "Pump", energy: 20 },
-  { id: "source_gas_inert", item: "item_gas_inert", cap: 460, tag: "Extract", energy: 0 },
-  { id: "source_gas_xiranite", item: "item_gas_xiranite", cap: 100, tag: "Extract", energy: 0 },
-  { id: "source_muck", item: "item_muck_feces_1", cap: null, tag: "Collect", energy: 0 },
+  { id: "source_liquid_acid", item: "item_liquid_acid", cap: null, regions: [WULING], tag: "Pump", energy: 20 },
+  { id: "source_gas_inert", item: "item_gas_inert", cap: 460, regions: [WULING], tag: "Extract", energy: 0 },
+  { id: "source_gas_xiranite", item: "item_gas_xiranite", cap: 100, regions: [WULING], tag: "Extract", energy: 0 },
+  { id: "source_muck", item: "item_muck_feces_1", cap: null, regions: [WULING], tag: "Collect", energy: 0 },
 ];
 
 const BURNS = [
-  { recipe: "burn_item_proc_battery_1", battery: "item_proc_battery_1", energy: 220 * 40 },
-  { recipe: "burn_item_proc_battery_2", battery: "item_proc_battery_2", energy: 420 * 40 },
-  { recipe: "burn_item_proc_battery_3", battery: "item_proc_battery_3", energy: 1100 * 40 },
-  { recipe: "burn_item_proc_battery_4", battery: "item_proc_battery_4", energy: 1600 * 40 },
-  { recipe: "burn_item_proc_battery_5", battery: "item_proc_battery_5", energy: 3200 * 40 },
+  { recipe: "burn_item_proc_battery_1", battery: "item_proc_battery_1", energy: 220 * 40, regions: [VALLEY] },
+  { recipe: "burn_item_proc_battery_2", battery: "item_proc_battery_2", energy: 420 * 40, regions: [VALLEY] },
+  { recipe: "burn_item_proc_battery_3", battery: "item_proc_battery_3", energy: 1100 * 40, regions: [VALLEY] },
+  { recipe: "burn_item_proc_battery_4", battery: "item_proc_battery_4", energy: 1600 * 40, regions: [WULING] },
+  { recipe: "burn_item_proc_battery_5", battery: "item_proc_battery_5", energy: 3200 * 40, regions: [WULING] },
 ];
 
 const SKIP_RECIPES = new Set([
@@ -226,6 +229,7 @@ for (const s of SOURCES) {
     energy: s.energy,
     source: true,
   };
+  if (s.regions) recipe.regions = s.regions;
   if (s.cap != null) recipe.capacity = s.cap;
   recipes.push(recipe);
 }
@@ -233,7 +237,7 @@ for (const s of SOURCES) {
 for (const b of BURNS) {
   const batteryName = itemNames.get(b.battery) || b.battery;
   trackName(batteryName, b.battery);
-  recipes.push({
+  const recipe = {
     id: b.recipe,
     name: localeRecipe[b.recipe] || "Power Generation (" + batteryName + ")",
     facility: "Thermal Bank",
@@ -241,7 +245,9 @@ for (const b of BURNS) {
     inputs: { [batteryName]: 1 },
     outputs: { Energy: b.energy },
     energy: 0,
-  });
+  };
+  if (b.regions) recipe.regions = b.regions;
+  recipes.push(recipe);
 }
 
 const collisions = [...namesToIds.entries()]

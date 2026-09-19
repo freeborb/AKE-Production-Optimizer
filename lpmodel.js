@@ -2,6 +2,20 @@ export function varName(id) {
   return "x_" + String(id).replace(/[^A-Za-z0-9]/g, "_");
 }
 
+export function validInRegion(r, region) {
+  if (!r.regions) return true;
+  return !!region && r.regions.includes(region);
+}
+
+export function capFor(r, region) {
+  if (r.capacity === undefined || r.capacity === null) return Infinity;
+  if (typeof r.capacity === "object") {
+    const c = region ? r.capacity[region] : undefined;
+    return Number.isFinite(c) ? c : Infinity;
+  }
+  return r.capacity;
+}
+
 function fmt(n) {
   if (!Number.isFinite(n)) return String(n);
   const r = Math.round(n * 1e9) / 1e9;
@@ -39,23 +53,25 @@ function balanceCoeffs(recipes) {
 }
 
 export function buildLP(recipes, opts = {}) {
-  const { mode = "maximize", target, targetAmount = 1, availability = {} } = opts;
-  const rows = balanceCoeffs(recipes);
+  const { mode = "maximize", target, targetAmount = 1, availability = {}, region } = opts;
+  const active = recipes.filter((r) => validInRegion(r, region));
+  const rows = balanceCoeffs(active);
   const capacities = new Map();
-  for (const r of recipes) {
+  for (const r of active) {
     const v = varName(r.id);
     let ub = Infinity;
     if (r.source) {
       const a = Number(availability[r.id]);
       if (Number.isFinite(a) && a >= 0) ub = a;
     }
-    if (Number.isFinite(r.capacity)) ub = Math.min(ub, r.capacity);
+    const cap = capFor(r, region);
+    if (Number.isFinite(cap)) ub = Math.min(ub, cap);
     if (Number.isFinite(ub)) capacities.set(v, ub);
   }
 
   const obj = new Map();
   if (mode === "minimize") {
-    for (const r of recipes) if (r.source) obj.set(varName(r.id), 1);
+    for (const r of active) if (r.source) obj.set(varName(r.id), 1);
   } else if (mode === "maximize") {
     if (target) for (const [v, c] of rows.get(target)) obj.set(v, c);
   } else {
