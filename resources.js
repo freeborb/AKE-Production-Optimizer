@@ -1,6 +1,9 @@
-import { RECIPES } from "./data/recipes.js";
-import { nodeQualities, nodeRate, sourceTotal } from "./lpmodel.js";
-import { regionOptions, regionLabel, regionTagElement, initRegionUI } from "./region.js";
+import { RECIPES as BASE_RECIPES } from "./data/recipes.js";
+import { mergeRecipes } from "./custom-recipes.js";
+import { sourceTotal, sourceRegions } from "./lpmodel.js";
+import { regionOptions, regionLabel, regionTagsElement, initRegionUI } from "./region.js";
+
+const RECIPES = mergeRecipes(BASE_RECIPES);
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
@@ -23,30 +26,11 @@ function fmt(n) {
   return String(Math.round(n * 1000) / 1000);
 }
 
-function qname(q) {
-  return q === "node" ? "Node" : q.toUpperCase();
-}
-
-function nodeText(r) {
-  return nodeQualities(r)
-    .map((q) => qname(q) + " " + fmt(nodeRate(r, q)) + "/min")
-    .join(" | ");
-}
-
-function capsText(r) {
-  const defs = r.defaults || {};
-  if (!Object.keys(defs).length) return "unlimited";
-  return Object.entries(defs)
-    .map(([reg, counts]) => {
-      const used = nodeQualities(r).filter((q) => (counts[q] ?? 0) > 0);
-      const countStr = used.length ? used.map((q) => (counts[q] ?? 0) + " " + (QUALITY_LABEL[q] || q)).join(" + ") : "none";
-      return regionLabel(Number(reg)) + ": " + countStr + " = " + fmt(sourceTotal(r, Number(reg), counts)) + "/min";
-    })
-    .join("  |  ");
-}
-
 function matches(r) {
-  if (state.region !== 0 && r.region !== 0 && r.region !== state.region) return false;
+  if (state.region !== 0) {
+    const regs = sourceRegions(r);
+    if (regs.length && !regs.includes(state.region)) return false;
+  }
   if (state.type) {
     const t = (r.name.split(" ")[0] || "").toLowerCase();
     if (t !== state.type) return false;
@@ -57,6 +41,16 @@ function matches(r) {
 
 function metaParts(r) {
   return [r.name.split(" ")[0]];
+}
+
+function regionLines(r) {
+  if (!r.nodes) return ["unlimited"];
+  return sourceRegions(r).map((reg) => {
+    const c = r.nodes[reg];
+    const quals = ["hp", "lp", "node"].filter((q) => (c[q] ?? 0) > 0);
+    const str = quals.map((q) => (c[q] ?? 0) + " " + (QUALITY_LABEL[q] || q)).join(" + ");
+    return regionLabel(reg) + ": " + str + " = " + fmt(sourceTotal(r, reg)) + "/min";
+  });
 }
 
 function render() {
@@ -74,9 +68,10 @@ function render() {
     const meta = document.createElement("div");
     meta.className = "detail-meta";
     meta.textContent = metaParts(r).join("  |  ");
-    meta.appendChild(regionTagElement(r.region));
+    const tags = regionTagsElement(r);
+    if (tags.childElementCount) meta.appendChild(tags);
     detail.appendChild(meta);
-    for (const line of [nodeText(r), capsText(r)]) {
+    for (const line of regionLines(r)) {
       const el = document.createElement("div");
       el.className = "detail-meta";
       el.textContent = line;

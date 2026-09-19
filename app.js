@@ -1,11 +1,11 @@
 import { RECIPES as BASE_RECIPES } from "./data/recipes.js";
-import { mergeCustomRecipes } from "./custom-recipes.js";
+import { mergeRecipes } from "./custom-recipes.js";
 import { solveProblem } from "./solver.js";
 import { loadEnabled, REGION_KEY } from "./store.js";
 import { validInRegion, nodeQualities, sourceTotal, sourceUnlimited } from "./lpmodel.js";
 import { currentRegion, regionOptions, setRegion, initRegionUI } from "./region.js";
 
-const RECIPES = mergeCustomRecipes(BASE_RECIPES);
+const RECIPES = mergeRecipes(BASE_RECIPES);
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
@@ -66,7 +66,7 @@ for (const id of regionOptions()) {
   };
   for (const r of RECIPES) {
     if (!r.source || sourceUnlimited(r, id) || !validInRegion(r, id)) continue;
-    def.availability[r.id] = { ...(r.defaults?.[id] || {}) };
+    def.availability[r.id] = { ...(r.nodes?.[id] || {}) };
   }
   const saved = savedStates[id] || {};
   state.regions[id] = {
@@ -164,7 +164,7 @@ function renderAvailability() {
     controls.className = "avail-controls";
     const inputsWrap = document.createElement("div");
     inputsWrap.className = "avail-inputs";
-    for (const q of nodeQualities(r)) {
+    for (const q of nodeQualities(r, state.region)) {
       const qlabel = document.createElement("span");
       qlabel.className = "avail-q";
       qlabel.textContent = "Max " + (QUALITY_LABEL[q] || q);
@@ -323,7 +323,7 @@ els.solve.addEventListener("click", async () => {
   }
   const totals = {};
   for (const r of recipes) {
-    if (r.source && !r.unlimited) totals[r.id] = sourceTotal(r, state.region, s.availability[r.id] || {});
+    if (r.source && !sourceUnlimited(r, state.region)) totals[r.id] = sourceTotal(r, state.region, s.availability[r.id] || {});
   }
   const opts = {
     mode: s.mode,

@@ -1,12 +1,12 @@
 import { RECIPES as BASE_RECIPES } from "./data/recipes.js";
 import { loadEnabled, saveEnabled } from "./store.js";
-import { nodeQualities, nodeRate, sourceTotal, validInRegion } from "./lpmodel.js";
-import { currentRegion, regionOptions, regionLabel, regionTagElement, initRegionUI } from "./region.js";
-import { loadCustomRecipes, saveCustomRecipes, newCustomId } from "./custom-recipes.js";
+import { nodeQualities, nodeRate, sourceTotal, sourceUnlimited, sourceRegions, validInRegion } from "./lpmodel.js";
+import { currentRegion, regionOptions, regionLabel, regionTagElement, regionTagsElement, initRegionUI } from "./region.js";
+import { loadCustomRecipes, saveCustomRecipes, loadHiddenRecipes, saveHiddenRecipes, mergeRecipes, newCustomId } from "./custom-recipes.js";
 
 const customs = loadCustomRecipes();
 const custIds = new Set(customs.map((c) => c.id));
-const RECIPES = [...BASE_RECIPES.filter((r) => !custIds.has(r.id)), ...customs];
+const RECIPES = mergeRecipes(BASE_RECIPES);
 
 const QUALITY_LABEL = { hp: "HP", lp: "LP", node: "Nodes" };
 
@@ -49,9 +49,10 @@ function fmt(n) {
 }
 
 function capText(r) {
+  const region = currentRegion();
+  if (sourceUnlimited(r, region)) return "unlimited";
   const parts = [];
-  if (!r.defaults || !Object.keys(r.defaults).length) parts.push("unlimited");
-  const quals = nodeQualities(r);
+  const quals = nodeQualities(r, region);
   if (quals.length) {
     parts.push(
       quals
@@ -59,20 +60,20 @@ function capText(r) {
         .join(" | ")
     );
   }
-  const defs = Object.entries(r.defaults || {});
+  const defs = sourceRegions(r);
   if (defs.length) {
     parts.push(
       "default " +
-        defs.map(([reg, counts]) => regionLabel(Number(reg)) + " " + countsText(counts, r)).join(" | ")
+        defs.map((reg) => regionLabel(reg) + " " + countsText(r.nodes[reg], r)).join(" | ")
     );
   }
   return parts.join("  |  ");
 }
 
 function countsText(counts, r) {
-  return nodeQualities(r)
-    .map((q) => (counts[q] ?? 0) + " " + (QUALITY_LABEL[q] || q))
-    .join(" + ") + " = " + fmt(sourceTotal(r, null, counts)) + "/min";
+  const quals = ["hp", "lp", "node"].filter((q) => (counts[q] ?? 0) > 0);
+  const str = quals.map((q) => (counts[q] ?? 0) + " " + (QUALITY_LABEL[q] || q)).join(" + ");
+  return (str || "none") + " = " + fmt(sourceTotal(r, null, counts)) + "/min";
 }
 
 function detailLine(r) {
@@ -110,11 +111,16 @@ function rowDetail(r) {
   const outs = Object.entries(r.outputs);
   if (outs.length) container.appendChild(ioLine("out", "OUT", outs));
   const meta = detailLine(r);
-  if (meta || r.region != null) {
+  if (meta || r.source || r.region != null) {
     const metaEl = document.createElement("span");
     metaEl.className = "detail-meta";
     if (meta) metaEl.textContent = meta;
-    if (r.region != null) metaEl.appendChild(regionTagElement(r.region));
+    if (r.source) {
+      const tags = regionTagsElement(r);
+      if (tags.childElementCount) metaEl.appendChild(tags);
+    } else if (r.region != null) {
+      metaEl.appendChild(regionTagElement(r.region));
+    }
     container.appendChild(metaEl);
   }
   return container;
@@ -145,11 +151,29 @@ function deleteCustom(r) {
   custIds.delete(r.id);
   const ri = RECIPES.indexOf(r);
   if (ri >= 0) RECIPES.splice(ri, 1);
-  delete currentEnabled()[r.id];
-  saveEnabled(currentEnabled(), currentRegion());
+  removeEnabled(r);
   state.facility = "";
   initFacilityOptions();
   render();
+}
+
+function hideBuiltIn(r) {
+  const hidden = loadHiddenRecipes();
+  if (!hidden.includes(r.id)) {
+    hidden.push(r.id);
+    saveHiddenRecipes(hidden);
+  }
+  removeEnabled(r);
+  const ri = RECIPES.indexOf(r);
+  if (ri >= 0) RECIPES.splice(ri, 1);
+  state.facility = "";
+  initFacilityOptions();
+  render();
+}
+
+function removeEnabled(r) {
+  delete currentEnabled()[r.id];
+  saveEnabled(currentEnabled(), currentRegion());
 }
 
 function render() {
@@ -157,9 +181,8 @@ function render() {
   const regionSet = regionRecipes();
   const shown = regionSet.filter(matchesFilter);
   for (const r of shown) {
-    const isCustom = custIds.has(r.id);
     const row = document.createElement("label");
-    row.className = "recipe-row" + (isCustom ? " custom" : "") + (currentEnabled()[r.id] ? "" : " off");
+    row.className = "recipe-row" + (currentEnabled()[r.id] ? "" : " off");
     const cb = document.createElement("input");
     cb.type = "checkbox";
     cb.checked = currentEnabled()[r.id];
@@ -185,19 +208,48 @@ function render() {
     row.appendChild(cb);
     row.appendChild(nameWrap);
     row.appendChild(rowDetail(r));
-    if (isCustom) {
-      const del = document.createElement("button");
-      del.type = "button";
-      del.className = "recipe-del";
-      del.title = "Delete custom recipe";
-      del.textContent = "×";
-      del.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        deleteCustom(r);
+
+    const delWrap = document.createElement("span");
+    delWrap.className = "recipe-del-wrap";
+    row.appendChild(delWrap);
+    const delBtn = document.createElement("button");
+    delBtn.type = "button";
+    delBtn.className = "recipe-del";
+    delBtn.title = "Delete recipe";
+    delBtn.textContent = "×";
+    const disarm = () => {
+      delWrap.innerHTML = "";
+      delWrap.appendChild(delBtn);
+      row.classList.remove("armed");
+    };
+    delBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      row.classList.add("armed");
+      delWrap.innerHTML = "";
+      const ok = document.createElement("button");
+      ok.type = "button";
+      ok.className = "recipe-del-confirm";
+      ok.textContent = "Delete";
+      ok.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (custIds.has(r.id)) deleteCustom(r);
+        else hideBuiltIn(r);
       });
-      row.appendChild(del);
-    }
+      const cancel = document.createElement("button");
+      cancel.type = "button";
+      cancel.className = "recipe-del-cancel";
+      cancel.textContent = "Cancel";
+      cancel.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        disarm();
+      });
+      delWrap.appendChild(ok);
+      delWrap.appendChild(cancel);
+    });
+    delWrap.appendChild(delBtn);
     els.list.appendChild(row);
   }
   const enabledCount = regionSet.filter((x) => currentEnabled()[x.id]).length;
@@ -222,7 +274,7 @@ const add = {
   panel: document.getElementById("add-panel"),
   name: document.getElementById("custom-name"),
   facility: document.getElementById("custom-facility"),
-  suggest: document.getElementById("facility-suggest"),
+  suggest: document.getElementById("fac-suggest"),
   time: document.getElementById("custom-time"),
   region: document.getElementById("custom-region"),
   inputs: document.getElementById("custom-inputs"),
@@ -270,12 +322,45 @@ function collectIo(container) {
   return out;
 }
 
+function facilityOptions() {
+  return [...new Set(RECIPES.map((r) => r.facility).filter(Boolean))].sort();
+}
+
+function refreshSuggest() {
+  const q = add.facility.value.trim().toLowerCase();
+  const filtered = facilityOptions().filter((f) => !q || f.toLowerCase().includes(q));
+  add.suggest.innerHTML = "";
+  if (!filtered.length) {
+    add.suggest.hidden = true;
+    return;
+  }
+  for (const f of filtered) {
+    const li = document.createElement("li");
+    li.textContent = f;
+    li.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      add.facility.value = f;
+      add.suggest.hidden = true;
+    });
+    add.suggest.appendChild(li);
+  }
+  add.suggest.hidden = false;
+}
+
+function closeSuggest() {
+  add.suggest.hidden = true;
+}
+
+add.facility.addEventListener("focus", refreshSuggest);
+add.facility.addEventListener("input", refreshSuggest);
+add.facility.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeSuggest();
+});
+add.facility.addEventListener("blur", () => setTimeout(closeSuggest, 100));
+
 function openAddPanel() {
   add.error.textContent = "";
   add.panel.hidden = false;
-  add.suggest.innerHTML = [...new Set(RECIPES.map((r) => r.facility).filter(Boolean))].sort()
-    .map((f) => '<option value="' + f + '"></option>')
-    .join("");
   for (const container of [add.inputs, add.outputs]) {
     if (!container.querySelector(".io-input-row")) container.appendChild(ioRow(""));
   }
@@ -283,6 +368,7 @@ function openAddPanel() {
 }
 
 function closeAddPanel() {
+  closeSuggest();
   add.panel.hidden = true;
 }
 

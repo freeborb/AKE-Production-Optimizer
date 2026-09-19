@@ -1,8 +1,8 @@
 import { RECIPES as BASE_RECIPES, FACILITIES } from "./data/recipes.js";
-import { mergeCustomRecipes } from "./custom-recipes.js";
+import { mergeRecipes } from "./custom-recipes.js";
 import { regionTagElement, initRegionUI } from "./region.js";
 
-const RECIPES = mergeCustomRecipes(BASE_RECIPES);
+const RECIPES = mergeRecipes(BASE_RECIPES);
 
 const els = {
   region: document.getElementById("region"),

@@ -3,13 +3,32 @@ export function varName(id) {
 }
 
 export function validInRegion(r, region) {
-  if (!r.region || r.region === 0) return true;
-  return r.region === region;
+  if (!r.source) {
+    if (!r.region || r.region === 0) return true;
+    return r.region === region;
+  }
+  const entries = Object.entries(r.nodes || {});
+  if (!entries.length) return true;
+  if (region === 0) return true;
+  return entries.some(([reg, c]) => Number(reg) === region && nodeCountSum(c) > 0);
 }
 
-export function nodeQualities(r) {
+export function nodeCountSum(c) {
+  return (c.hp ?? 0) + (c.lp ?? 0) + (c.node ?? 0);
+}
+
+export function sourceRegions(r) {
+  const out = [];
+  for (const [reg, c] of Object.entries(r.nodes || {})) {
+    if (nodeCountSum(c) > 0) out.push(Number(reg));
+  }
+  return out.sort((a, b) => a - b);
+}
+
+export function nodeQualities(r, region) {
   if (!r.source) return [];
-  return r.highPurity ? ["hp", "lp"] : ["node"];
+  const c = r.nodes?.[region] || {};
+  return ["hp", "lp", "node"].filter((q) => (c[q] ?? 0) > 0);
 }
 
 export function nodeRate(r, q) {
@@ -19,23 +38,18 @@ export function nodeRate(r, q) {
 }
 
 export function sourceTotal(r, region, counts) {
+  const c = counts || r.nodes?.[region] || {};
   let total = 0;
-  for (const q of nodeQualities(r)) {
-    let n = counts?.[q];
-    if (!(Number.isFinite(n) && n >= 0)) n = r.defaults?.[region]?.[q] ?? 0;
-    total += n * nodeRate(r, q);
+  for (const q of ["hp", "lp", "node"]) {
+    const n = c[q];
+    if (Number.isFinite(n) && n > 0) total += n * nodeRate(r, q);
   }
   return total;
 }
 
 export function sourceUnlimited(r, region) {
   if (!r.source) return false;
-  const counts = r.defaults?.[region];
-  if (!counts) return true;
-  for (const q of nodeQualities(r)) {
-    if ((counts[q] ?? 0) > 0) return false;
-  }
-  return true;
+  return nodeCountSum(r.nodes?.[region] || {}) <= 0;
 }
 
 function fmt(n) {

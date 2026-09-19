@@ -137,43 +137,44 @@ const SOURCES = [
     id: "source_originium_ore",
     item: "item_originium_ore",
     tag: "Mine",
-    region: 0,
     rate: 10,
-    highPurity: true,
-    defaults: { [VALLEY]: { hp: 28, lp: 0 }, [WULING]: { hp: 22, lp: 10 } },
+    nodes: {
+      [VALLEY]: { hp: 28, lp: 0 },
+      [WULING]: { hp: 22, lp: 10 },
+    },
   },
   {
     id: "source_quartz_sand",
     item: "item_quartz_sand",
     tag: "Mine",
     rate: 10,
-    highPurity: true,
-    defaults: { [VALLEY]: { hp: 12, lp: 0 } },
-    region: VALLEY,
+    nodes: {
+      [VALLEY]: { hp: 12, lp: 0 },
+    },
   },
   {
     id: "source_iron_ore",
     item: "item_iron_ore",
     tag: "Mine",
-    region: 0,
     rate: 10,
-    highPurity: true,
-    defaults: { [VALLEY]: { hp: 54, lp: 0 }, [WULING]: { hp: 6, lp: 0 } },
+    nodes: {
+      [VALLEY]: { hp: 54, lp: 0 },
+      [WULING]: { hp: 6, lp: 0 },
+    },
   },
   {
     id: "source_copper_ore",
     item: "item_copper_ore",
     tag: "Mine",
     rate: 10,
-    highPurity: true,
-    defaults: { [WULING]: { hp: 21, lp: 0 } },
-    region: WULING,
+    nodes: {
+      [WULING]: { hp: 21, lp: 0 },
+    },
   },
   {
     id: "source_liquid_water",
     item: "item_liquid_water",
     tag: "Pump",
-    region: 0,
     rate: 60,
   },
   {
@@ -181,33 +182,24 @@ const SOURCES = [
     item: "item_liquid_acid",
     tag: "Pump",
     rate: 60,
-    region: WULING,
   },
   {
     id: "source_gas_inert",
     item: "item_gas_inert",
     tag: "Extract",
     rate: 10,
-    highPurity: true,
-    defaults: { [WULING]: { hp: 23, lp: 0 } },
-    region: WULING,
+    nodes: {
+      [WULING]: { hp: 23, lp: 0 },
+    },
   },
   {
     id: "source_gas_xiranite",
     item: "item_gas_xiranite",
     tag: "Extract",
     rate: 10,
-    highPurity: true,
-    defaults: { [WULING]: { hp: 5, lp: 0 } },
-    region: WULING,
-  },
-  {
-    id: "source_muck",
-    item: "item_muck_feces_1",
-    tag: "Collect",
-    rate: 30,
-    defaults: { [WULING]: { node: 10 } },
-    region: WULING,
+    nodes: {
+      [WULING]: { hp: 5, lp: 0 },
+    },
   },
 ];
 
@@ -304,9 +296,7 @@ for (const s of SOURCES) {
     source: true,
     rate: s.rate,
   };
-  if (s.highPurity) recipe.highPurity = true;
-  if (s.defaults) recipe.defaults = s.defaults;
-  if (s.region != null) recipe.region = s.region;
+  if (s.nodes) recipe.nodes = s.nodes;
   recipes.push(recipe);
 }
 

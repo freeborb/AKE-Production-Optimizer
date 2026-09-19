@@ -39,9 +39,12 @@
           </label>
           <label class="field-grid">
             <span>Facility</span>
-            <input id="custom-facility" type="text" list="facility-suggest" placeholder="e.g. Fitting Unit" />
+            <span class="facility-wrap">
+              <input id="custom-facility" type="text" placeholder="e.g. Fitting Unit" />
+              <ul id="fac-suggest" class="fac-suggest" hidden></ul>
+            </span>
           </label>
-          <datalist id="facility-suggest"></datalist>
+
           <label class="field-grid">
             <span>Crafting time (s)</span>
             <input id="custom-time" type="number" min="0.1" step="any" value="1" />

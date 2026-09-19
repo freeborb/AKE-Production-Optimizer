@@ -1,4 +1,5 @@
 import { loadRegion, saveRegion } from "./store.js";
+import { sourceRegions } from "./lpmodel.js";
 
 export const REGIONS = [
   { id: 1, label: "Valley 4", color: "dced3f" },
@@ -40,6 +41,13 @@ export function regionTagElement(id) {
   }
   span.textContent = regionLabel(id);
   return span;
+}
+
+export function regionTagsElement(r) {
+  const wrap = document.createElement("span");
+  wrap.className = "region-tags";
+  for (const id of sourceRegions(r)) wrap.appendChild(regionTagElement(id));
+  return wrap;
 }
 
 export function initRegionUI(selectEl, onChange) {

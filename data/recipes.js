@@ -4070,8 +4070,7 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "1": {
         "hp": 28,
         "lp": 0
@@ -4080,8 +4079,7 @@ export const RECIPES = [
         "hp": 22,
         "lp": 10
       }
-    },
-    "region": 0
+    }
   },
   {
     "id": "source_quartz_sand",
@@ -4092,14 +4090,12 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "1": {
         "hp": 12,
         "lp": 0
       }
-    },
-    "region": 1
+    }
   },
   {
     "id": "source_iron_ore",
@@ -4110,8 +4106,7 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "1": {
         "hp": 54,
         "lp": 0
@@ -4120,8 +4115,7 @@ export const RECIPES = [
         "hp": 6,
         "lp": 0
       }
-    },
-    "region": 0
+    }
   },
   {
     "id": "source_copper_ore",
@@ -4132,14 +4126,12 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "2": {
         "hp": 21,
         "lp": 0
       }
-    },
-    "region": 2
+    }
   },
   {
     "id": "source_liquid_water",
@@ -4149,8 +4141,7 @@ export const RECIPES = [
       "Clean Water": 1
     },
     "source": true,
-    "rate": 60,
-    "region": 0
+    "rate": 60
   },
   {
     "id": "source_liquid_acid",
@@ -4160,8 +4151,7 @@ export const RECIPES = [
       "Precipitation Acid": 1
     },
     "source": true,
-    "rate": 60,
-    "region": 2
+    "rate": 60
   },
   {
     "id": "source_gas_inert",
@@ -4172,14 +4162,12 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "2": {
         "hp": 23,
         "lp": 0
       }
-    },
-    "region": 2
+    }
   },
   {
     "id": "source_gas_xiranite",
@@ -4190,30 +4178,12 @@ export const RECIPES = [
     },
     "source": true,
     "rate": 10,
-    "highPurity": true,
-    "defaults": {
+    "nodes": {
       "2": {
         "hp": 5,
         "lp": 0
       }
-    },
-    "region": 2
-  },
-  {
-    "id": "source_muck",
-    "name": "Collect Burdo-Muck",
-    "inputs": {},
-    "outputs": {
-      "Burdo-Muck": 1
-    },
-    "source": true,
-    "rate": 30,
-    "defaults": {
-      "2": {
-        "node": 10
-      }
-    },
-    "region": 2
+    }
   },
   {
     "id": "burn_item_proc_battery_1",
